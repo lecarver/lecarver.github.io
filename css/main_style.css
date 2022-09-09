@@ -1,3 +1,12 @@
+/*
+Diverging color palette from https://www.learnui.design/tools/data-color-picker.html
+#370558 - purple
+#9377a2 - lavender
+#f1f1f1 - off-white
+#7e998f - green-grey
+#094938 - green
+*/
+
 body {
   background-color: #7e998f;
   color: #370558;
