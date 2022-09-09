@@ -1,19 +1,19 @@
 /*
-Diverging color palette from https://www.learnui.design/tools/data-color-picker.html
-#370558 - purple
-#9377a2 - lavender
-#f1f1f1 - off-white
-#7e998f - green-grey
-#094938 - green
+Color palette from https://coolors.co/
+#483838 - Old Burgundy
+#42855B- Sea Green
+#90B77D - Olivine
+#D2D79F- Pale Spring Bud
+#896565 - Deep Taupe
 */
 
 body {
-  background-color: #7e998f;
-  color: #370558;
+  background-color: #6D8B74;
+  color: #483838;
   text-align: center;
 
 }
 
 h1 {
-  color: #094938
+  color: #D0C9C0
 }
