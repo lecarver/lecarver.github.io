@@ -1,11 +1,28 @@
 /*
 Color palette from https://coolors.co/
 #483838 - Old Burgundy
-#42855B- Sea Green
-#90B77D - Olivine
-#D2D79F- Pale Spring Bud
 #896565 - Deep Taupe
+#D6C89F- Dutch White
+#90B77D - Olivine
+#42855B- Sea Green
+
 */
+
+#header {
+  background-color: #896565;
+}
+
+h1 {
+  color: #D2D79F
+  padding: 5px;
+  margin: 0;
+}
+
+#body-container {
+  background-color:
+  max-width:
+
+}
 
 body {
   background-color: #6D8B74;
@@ -14,6 +31,15 @@ body {
 
 }
 
-h1 {
-  color: #D0C9C0
+
+#profile-picture{
+
+}
+
+#welcome-text{
+
+}
+
+#research-interests{
+
 }
