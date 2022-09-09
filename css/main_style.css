@@ -8,24 +8,35 @@ Color palette from https://coolors.co/
 
 */
 
+/*Set header container color and give 0 margin
+so that body backgroud color is not visible around it*/
 #header {
-  background-color: #896565;
-}
-
-h1 {
-  color: #D2D79F
-  padding: 5px;
+  background-color: #483838;
   margin: 0;
 }
-
-#body-container {
-  background-color:
-  max-width:
-
+/*Set header text color, give padding to give more space
+around the text and give 0 margin to ensure body background
+color is not visible around the header*/
+h1 {
+  color: #D6C89F;
+  padding: 10px;
+  margin: 0;
 }
-
+/*Set body container color. Set max-width to prevent width property
+of other elements in the body from surpassing 1000px. Setting the margin
+to auto to center elements in their container*/
+#body-container {
+  background-color: #90B77D ;
+  max-width:1000px;
+  margin: auto;
+  height: 100vh;
+  border: 2px solid: #42855B;
+  border-radius: 25px;
+  overflow: hidden;
+}
+/*
 body {
-  background-color: #6D8B74;
+  background-color: #90B77D;
   color: #483838;
   text-align: center;
 
@@ -43,3 +54,4 @@ body {
 #research-interests{
 
 }
+*/
