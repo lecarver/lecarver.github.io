@@ -5,53 +5,75 @@ Color palette from https://coolors.co/
 #D6C89F- Dutch White
 #90B77D - Olivine
 #42855B- Sea Green
-
 */
 
 /*Set header container color and give 0 margin
-so that body backgroud color is not visible around it*/
+so that body backgroud color is not visible around it (by not allowing any space
+ around the container)*/
 #header {
   background-color: #483838;
   margin: 0;
 }
-/*Set header text color, give padding to give more space
+
+/*Set header text color, add padding to give more space
 around the text and give 0 margin to ensure body background
-color is not visible around the header*/
+color is not visible around the header (again, by not allowing any space around
+the element). Changed font to monospace*/
 h1 {
   color: #D6C89F;
   padding: 10px;
   margin: 0;
+  font-family: monospace;
 }
+
 /*Set body container color. Set max-width to prevent width property
 of other elements in the body from surpassing 1000px. Setting the margin
-to auto to center elements in their container*/
+to auto to center elements in their container. Set the height to 100% of the
+viewpoint, meaning the container will span the full height of the screen. The
+border radius gives the container rounded corners. And then the hidden overflow
+means that any content that is too big to fit in the container will be clipped.
+*/
 #body-container {
   background-color: #90B77D ;
   max-width:1000px;
   margin: auto;
   height: 100vh;
   border: 2px solid: #42855B;
-  border-radius: 25px;
+  border-radius: 10px;
   overflow: hidden;
 }
-/*
+
+/*Set body background and body text colors. Aligns text to the center of the
+page and give a small margin around the body element. Set font to monospace.*/
 body {
-  background-color: #90B77D;
+  background-color: #42855B;
   color: #483838;
   text-align: center;
-
+  margin: 5px;
+  font-family: monospace;
+font-family: monospace;
 }
 
-
+/*Align picture to the left and give a margin to the top and left so the picture
+is not right on the border.*/
 #profile-picture{
-
+  float: left;
+  margin-top: 10px;
+  margin-left: 5px;
 }
 
+/*Add padding to give space at the top of the text. Enlarge font size. */
 #welcome-text{
-
+  padding-top: 25px;
+  font-size: 25px;
 }
 
+/* Alight text to the right of the screen. Enlarge font size. Give relative
+position so any alignment proporties are dont relative to the normal position of
+the element. Add additional space to the right of the research interests.*/
 #research-interests{
-
+  text-align: right;
+  position: relative;
+  font-size: 20px;
+  right: 20px;
 }
-*/
