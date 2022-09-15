@@ -34,7 +34,7 @@ border radius gives the container rounded corners. And then the hidden overflow
 means that any content that is too big to fit in the container will be clipped.
 */
 #body-container {
-  background-color: #90B77D ;
+  background-color: #90B77D;
   max-width:1000px;
   margin: auto;
   height: 100vh;
@@ -51,7 +51,7 @@ body {
   text-align: center;
   margin: 5px;
   font-family: monospace;
-font-family: monospace;
+  font-family: monospace;
 }
 
 /*Align picture to the left and give a margin to the top and left so the picture
@@ -68,12 +68,28 @@ is not right on the border.*/
   font-size: 25px;
 }
 
-/* Alight text to the right of the screen. Enlarge font size. Give relative
+/* Alight text to the left. Enlarge font size. Give relative
 position so any alignment proporties are dont relative to the normal position of
-the element. Add additional space to the right of the research interests.*/
+the element. Add additional space to the left of the research interests.*/
 #research-interests{
-  text-align: right;
+  text-align: left;
   position: relative;
   font-size: 20px;
-  right: 20px;
+  left: 50px;
+}
+
+/* align text to the left and give it a fixed position so it stays relative
+to the browser window. I've assigned 0 to the bottom, left, and right properties
+so that the footer will be at the bottom of the page and will fill the whole area
+at the bottom. Added some padding to add space around the text and set the text
+and background colors.*/
+footer {
+  text-align: left;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 3px;
+  background-color: #483838;
+  color: #D6C89F;
 }
