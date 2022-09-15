@@ -68,14 +68,21 @@ is not right on the border.*/
   font-size: 25px;
 }
 
-/* Alight text to the left. Enlarge font size. Give relative
+/* Alight text to the right. Enlarge font size. Give relative
 position so any alignment proporties are dont relative to the normal position of
-the element. Add additional space to the left of the research interests.*/
+the element. Add additional space to the right of the research interests.*/
 #research-interests{
-  text-align: left;
+  text-align: right;
   position: relative;
   font-size: 20px;
-  left: 50px;
+  right: 20px;
+}
+
+/*change list bullet style and position bullets so they will be part of then item
+and will also align right. */
+li{
+  list-style-type:square;
+  list-style-position: inside;
 }
 
 /* align text to the left and give it a fixed position so it stays relative
