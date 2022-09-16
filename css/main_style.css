@@ -38,15 +38,19 @@ means that any content that is too big to fit in the container will be clipped.
   max-width:1000px;
   margin: auto;
   height: 100vh;
-  border: 2px solid: #42855B;
+  border: 2px solid #483838;
   border-radius: 10px;
   overflow: hidden;
 }
 
-/*Set body background and body text colors. Aligns text to the center of the
-page and give a small margin around the body element. Set font to monospace.*/
+/*Set body background image and body text colors. For the backgroud image,
+it is set to not repeat and to fill the entire page. The text is also aligned to
+the center of the page and given a small margin around the body element.
+Set font to monospace.*/
 body {
-  background-color: #42855B;
+  background-image: url("../images/backgroundimage.png");
+  background-repeat: no-repeat;
+  background-size: cover;
   color: #483838;
   text-align: center;
   margin: 5px;
@@ -81,7 +85,8 @@ the element. Add additional space to the right of the research interests.*/
 /*change list bullet style and position bullets so they will be part of then item
 and will also align right. */
 li{
-  list-style-type:square;
+  list-style-image: url("../images/bulleticon.png");
+  /*list-style-type:square;*/
   list-style-position: inside;
 }
 
