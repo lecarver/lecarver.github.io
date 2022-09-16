@@ -105,3 +105,14 @@ footer {
   background-color: #483838;
   color: #D6C89F;
 }
+/*Add color styling to link in the footer*/
+footer a:link{
+  color:#90B77D;
+}
+footer a:visited{
+  color:#90B77D;
+}
+
+footer a:hover{
+  color:#896565;
+}
