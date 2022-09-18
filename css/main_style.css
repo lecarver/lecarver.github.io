@@ -48,7 +48,7 @@ it is set to not repeat and to fill the entire page. The text is also aligned to
 the center of the page and given a small margin around the body element.
 Set font to monospace.*/
 body {
-  background-image: url("../images/backgroundimage.png");
+  background-image: url("https://raw.githubusercontent.com/lecarver/lecarver.github.io/main/images/backgroundimage.PNG");
   background-repeat: no-repeat;
   background-size: cover;
   color: #483838;
