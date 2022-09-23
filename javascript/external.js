@@ -1,5 +1,5 @@
 name = window.prompt("Please enter your name");
-document.write("<h1> Welcome " + name + "</h1>");
+document.write(name);
 
 
 //TASK 2
