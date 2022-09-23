@@ -28,12 +28,18 @@
 // //If we make x a constant variable, it cannot be reassigned so the last operator would not work.
 
 //TASK 5
-document.writeln("<button onclick = 'condition()')>Conditional Test</button>")
-function condition() {
-    x = confirm("Are you sure you want to proceed?");
-    if(x) {
-      document.writeln("You chose Okay!");
-    } else {
-      document.writeln("You chose Cancel!");
-    }
+// document.writeln("<button onclick = 'condition()')>Conditional Test</button>")
+// function condition() {
+//     x = confirm("Are you sure you want to proceed?");
+//     if(x) {
+//       document.writeln("You chose Okay!");
+//     } else {
+//       document.writeln("You chose Cancel!");
+//     }
+// }
+
+//TASK 6
+arr = ["Joe", "April", "Mark", "Sara"];
+for (var i = 0; i < arr.length; i++) {
+  document.writeln(arr[i], "<br>");
 }
