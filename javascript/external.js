@@ -1,3 +1,7 @@
+name = window.prompt("Please enter your name");
+document.write("<h1> Welcome " + name + "</h1>");
+
+
 //TASK 2
 //window.alert(5 + 6);
 //window.alert('5 + 6');
@@ -39,7 +43,7 @@
 // }
 
 //TASK 6
-arr = ["Joe", "April", "Mark", "Sara"];
-for (var i = 0; i < arr.length; i++) {
-  document.writeln(arr[i], "<br>");
-}
+// arr = ["Joe", "April", "Mark", "Sara"];
+// for (var i = 0; i < arr.length; i++) {
+//   document.writeln(arr[i], "<br>");
+// }
