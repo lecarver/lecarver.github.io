@@ -10,11 +10,30 @@
 //const out = x + y;
 //document.write(out);
 //A prompt box is used to prompt users to input a value before entering a page.
-user_name = window.prompt("Please enter your name", "Type your name here");
-document.write(user_name);
+// user_name = window.prompt("Please enter your name", "Type your name here");
+// document.write(user_name);
+//
+// //There are many ways to use the feature prompt
+// sign = window.prompt(); //opens blank prompt
+// sign = prompt(); //opens blank prompt
+// sign = window.prompt("Are you feeling lucky"); //open prompt with this text
+// sign = window.prompt("Are you feeling lucky", "sure"); //open the window with the text & default value.
 
-//There are many ways to use the feature prompt
-sign = window.prompt(); //opens blank prompt
-sign = prompt(); //opens blank prompt
-sign = window.prompt("Are you feeling lucky"); //open prompt with this text
-sign = window.prompt("Are you feeling lucky", "sure"); //open the window with the text & default value.
+//TASK 4
+// x = 22;
+// const y = 33;
+// document.writeln(x + y);
+// document.writeln("<br>");
+// document.writeln(x += 33);
+// //If we make x a constant variable, it cannot be reassigned so the last operator would not work.
+
+//TASK 5
+document.writeln("<button onclick = 'condition()')>Conditional Test</button>")
+function condition() {
+    x = confirm("Are you sure you want to proceed?");
+    if(x) {
+      document.writeln("You chose Okay!");
+    } else {
+      document.writeln("You chose Cancel!");
+    }
+}
