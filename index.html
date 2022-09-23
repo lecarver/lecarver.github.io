@@ -11,14 +11,15 @@
 <body>
   <div id = "body-container">
     <div id = "header">
-        <h1> Hello, welcome to my website
+        <h1> Hello, welcome to my website,
               <script src = "javascript/external.js"></script>
-        ! </h1>
+        </h1>
     </div>
     <div id = "profile-picture">
       <img src = "images\profile-picture.png", width = "500px", height = "500px"/>
     </div>
     <div id = "welcome-text">
+      My name is Lester.<br>
       Welcome to my webpage.<br>
       I am a student in the
       <a href = "https://www.clarku.edu/schools/idce/"> IDCE Department </a> at
@@ -32,8 +33,16 @@
         <li> Community-led Development </li>
       </ul>
     </div>
-    <footer>
-       © 2022 by Lester Carver. Background image by
+    <footer id = "copyright">
+      <script>
+        //Grab the current date & time
+        var today = new Date();
+        //Pull just the year from our today variable
+        var year = today.getFullYear();
+        //write in "Copyright", the copyright character and the year.
+        document.writeln("Copyright &copy;" + year);
+      </script>
+      by Lester Carver. Background image by
        <a href= "https://www.mapbox.com/">Mapbox</a>
     </footer>
   </div>
