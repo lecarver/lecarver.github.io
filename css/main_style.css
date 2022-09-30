@@ -90,6 +90,13 @@ li{
   list-style-position: inside;
 }
 
+#webmap-reviews{
+    text-align: left;
+    font-size: 25px;
+    position: relative;
+}
+
+
 /* Align text to the center and give it an abdolute position so it stays relative
 to the browser window. Given the width of the footer 1000px and moved
 it 20px from the bottom of the page. Added some padding to add space around the
