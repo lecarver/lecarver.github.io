@@ -1,5 +1,38 @@
-name = window.prompt("Please enter your name");
-document.write(name);
+//TASK 1
+function welcome(){
+  let a = "Please enter your name.";
+  let b = "Type your name here.";
+
+//prompt box
+user_name = window.prompt(a, b);
+message = "<hi>Hello, welcome to my webpage, "+ user_name + "!</h1>";
+
+return message;
+}
+document.write(welcome());
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//HW 3
+// name = window.prompt("Please enter your name");
+// document.write(name);
 
 
 //TASK 2
