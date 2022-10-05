@@ -11,7 +11,7 @@
 <body>
   <div id = "body-container">
     <div id = "header">
-        <h1> 
+        <h1>
           <script> document.write(welcome())</script>
         </h1>
     </div>
@@ -35,6 +35,17 @@
     </div>
     <div id = "webmap-reviews"><h3> Webmap Reviews </h3>
       <script> webmap_table() </script>
+    </div>
+    <div>
+      <form id = area-calculator>
+        Input length and width of a rectangle: </br>
+          Length: <input id = 'length' type ="number" name = "width"/></br>
+          Height: <input id = 'height' type ="number" name = "width"/></br></br>
+          <button type = 'button' onclick="area_calculator()">Click to Calculate</button>
+          Area of the rectangle is: <script>
+          document.writeln(area_calculator());
+          </script>
+      </form>
     </div>
     <footer id = "copyright">
       <script>

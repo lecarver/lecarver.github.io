@@ -94,9 +94,13 @@ li{
     text-align: left;
     font-size: 15px;
     position: relative;
+    margin: 10px;
 }
 
-
+#area-calculator{
+  text-align: left;
+  margin: 10px;
+}
 /* Align text to the center and give it an abdolute position so it stays relative
 to the browser window. Given the width of the footer 1000px and moved
 it 20px from the bottom of the page. Added some padding to add space around the
@@ -105,7 +109,7 @@ text and set the text and background colors.*/
   position: absolute;
   width: 1000px;
   text-align: center;
-  bottom: 20px;
+  bottom: 10px;
   padding: 3px;
   background-color: #483838;
   color: #D6C89F;

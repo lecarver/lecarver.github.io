@@ -6,13 +6,16 @@ var webmaps =
   ],
   ["Eye of Stormers",
   "https://spotify---bastille.appspot.com/",
-  "This is a super unique web map is a project by the band, Bastille, that accompanied the release of the “Wild World” album. This interactive map allows you to see and explore cities where the band’s music is being streamed the most. When you select a city, you can see the number of streams as well as the top 5 tracks. In addition, this web map also contains a time series, allowing you to see the streams over time."
+  "This is a super unique web map is a project by the band, Bastille, that accompanied the release of the Wild World album. This interactive map allows you to see and explore cities where the band’s music is being streamed the most. When you select a city, you can see the number of streams as well as the top 5 tracks. In addition, this web map also contains a time series, allowing you to see the streams over time."
   ]
 ];
 
-
-
-
+function area_calculator(){
+  var length = numeric(document.getElementById('length'));
+  var height = numeric(document.getElementById('height'));
+  var area = length * height;
+  document.writeln(area);
+}
 //HW4
 function welcome(){
   let a = "Please enter your name.";
