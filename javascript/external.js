@@ -10,6 +10,7 @@ var webmaps =
   ]
 ];
 
+
 function area_calculator(){
   var length = numeric(document.getElementById('length'));
   var height = numeric(document.getElementById('height'));
