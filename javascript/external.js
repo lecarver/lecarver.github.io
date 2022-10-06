@@ -31,7 +31,11 @@ return message;
 function webmap_table(){
   document.write("<table id = 'webmap_reviews' width = 100%>");
   for(var row = 0; row < webmaps.length; row++){
-    document.write("<tr>");
+    if (row < 1) {
+      document.write("<tr style='background-color:#D6C89F;'>")
+    } else {
+      document.write("<tr style='background-color:#896565;'>")
+    }
     for(var column = 0; column < webmaps[0].length; column++){
       document.write("<td>" + webmaps[row][column] + "</td>");
     }

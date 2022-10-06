@@ -33,15 +33,15 @@
         <li> Community-led Development </li>
       </ul>
     </div>
-    <div id = "webmap-reviews"><h3> Webmap Reviews </h3>
+    <div id = "webmap-reviews"><h2> Webmap Reviews </h2>
       <script>webmap_table()</script>
     </div>
     <div id = "area-calculator">
       <form>
-        Input length and width of a rectangle: </br>
+        <h2>Input length and width of a rectangle:</h2> </br>
           Length: <input id = 'length' type ="number" name = "width"/></br>
           Height: <input id = 'height' type ="number" name = "width"/></br></br>
-          <button type = 'button' onclick="area_calculator()">Click to Calculate</button>
+          <button id = 'area_button' type = 'button' onclick="area_calculator()">Click to Calculate</button>
           Area of the rectangle is:
           <span id = 'area_result'></span>
       </form>

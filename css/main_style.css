@@ -101,6 +101,15 @@ li{
   text-align: left;
   margin: 10px;
 }
+
+#area_button{
+  background-color: #42855B;
+  border: none;
+  color: #D6C89F;
+  font-family: monospace;
+  font-size: 15px;
+  cursor: pointer;
+}
 /* Align text to the center and give it an abdolute position so it stays relative
 to the browser window. Given the width of the footer 1000px and moved
 it 20px from the bottom of the page. Added some padding to add space around the
