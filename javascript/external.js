@@ -10,12 +10,11 @@ var webmaps =
   ]
 ];
 
-
 function area_calculator(){
-  var length = numeric(document.getElementById('length'));
-  var height = numeric(document.getElementById('height'));
+  var length = document.getElementById('length').value;
+  var height = document.getElementById('height').value;
   var area = length * height;
-  document.writeln(area);
+  document.getElementById('area_result').textContent = area;
 }
 //HW4
 function welcome(){
@@ -30,7 +29,7 @@ return message;
 }
 
 function webmap_table(){
-  document.write("<table width = 100%>");
+  document.write("<table id = 'webmap_reviews' width = 100%>");
   for(var row = 0; row < webmaps.length; row++){
     document.write("<tr>");
     for(var column = 0; column < webmaps[0].length; column++){
