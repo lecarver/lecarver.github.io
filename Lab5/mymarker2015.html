@@ -14,20 +14,26 @@
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true"></script>
     <script>
 function initialize() {
-  var myLatlng = new google.maps.LatLng(40.354317,-94.884603);
+//Set the lat/long coordinates for our map. I have selected the coordinates
+//for Plano Senior HS in Plano, TX.
+  var myLatlng = new google.maps.LatLng(33.02897195128468, -96.75187621588002);
   var mapOptions = {
-    zoom: 14,
+    zoom: 16, //Increased the Zoom a bit more
     center: myLatlng
   }
+//Create a variable for our map to go in the map-canvas div element in line UPDATE LINE #
   var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 
+//Creating the Marker for Plano Senior HS. I'm using a custom image for the marker.
+  var image = "http://maps.google.com/mapfiles/kml/pushpin/blue-pushpin.png"
   var marker = new google.maps.Marker({
-      position: myLatlng,
-      map: map,
-      title: 'Hello World!'
+    position: myLatlng,
+    map: map,
+    animation: google.maps.Animation.BOUNCE, //marker will bounce on map when page.
+    icon: image
   });
 }
-
+//initialize our map once the DOM is loaded
  google.maps.event.addDomListener(window, 'load', initialize);
 
     </script>
