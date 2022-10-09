@@ -89,6 +89,21 @@ li{
   list-style-position: inside;
 }
 
+#lab-5{
+  text-align: left;
+  margin: 10px;
+}
+#lab-5 a:link{
+  color:#483838;
+}
+#lab-5 a:visited{
+  color:#896565;
+}
+
+#lab-5 a:hover{
+  color:#42855B;
+}
+
 #webmap-reviews{
     text-align: left;
     font-size: 15px;
