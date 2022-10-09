@@ -37,10 +37,10 @@ means that any content that is too big to fit in the container will be clipped.
   background-color: #90B77D;
   max-width:1000px;
   margin: auto;
-  height: 100vh;
+  height: 130vh;
   border: 2px solid #483838;
   border-radius: 10px;
-  overflow: hidden;
+  overflow: visible;
 }
 
 /*Set body background image and body text colors. For the backgroud image,
@@ -117,7 +117,7 @@ text and set the text and background colors.*/
   position: absolute;
   width: 1000px;
   text-align: center;
-  bottom: 5px;
+  bottom: -195px;
   padding: 3px;
   background-color: #483838;
   color: #D6C89F;
