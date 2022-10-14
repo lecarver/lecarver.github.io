@@ -37,10 +37,11 @@ means that any content that is too big to fit in the container will be clipped.
   background-color: #90B77D;
   max-width:1000px;
   margin: auto;
-  height: 130vh;
+  height: auto;
   border: 2px solid #483838;
   border-radius: 10px;
   overflow: visible;
+  position: relative;
 }
 
 /*Set body background image and body text colors. For the backgroud image,
@@ -76,16 +77,14 @@ position so any alignment proporties are dont relative to the normal position of
 the element. Add additional space to the right of the research interests.*/
 #research-interests{
   text-align: right;
-  position: relative;
   font-size: 20px;
-  right: 20px;
+  margin-right: 25px;
 }
 
 /*change list bullet style and position bullets so they will be part of then item
 and will also align right. */
 li{
   list-style-image: url("../images/bulleticon.png");
-  /*list-style-type:square;*/
   list-style-position: inside;
 }
 
@@ -107,7 +106,6 @@ li{
 #webmap-reviews{
     text-align: left;
     font-size: 15px;
-    position: relative;
     margin: 10px;
 }
 
@@ -129,13 +127,13 @@ to the browser window. Given the width of the footer 1000px and moved
 it 20px from the bottom of the page. Added some padding to add space around the
 text and set the text and background colors.*/
 #copyright {
-  position: absolute;
-  width: 1000px;
+  width: inherit;
   text-align: center;
-  bottom: -195px;
+  margin-bottom: 5px;
   padding: 3px;
   background-color: #483838;
   color: #D6C89F;
+  position: relative;
 }
 /*Add color styling to link in the footer*/
 footer a:link{
