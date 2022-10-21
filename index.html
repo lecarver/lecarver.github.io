@@ -1,12 +1,22 @@
 <!doctype html>
 <html>
 <head>
-  <title>Lester Carver</title>
+  <!-- <meta charset="utf-8" I>
+  <meta name="viewport" content=""width=device-width, initial-scale="1.9"›
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"
+   integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14="
+   crossorigin=""/> -->
+<!-- Make sure you put this AFTER Leaflet's CSS -->
+  <!-- <script src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js"
+   integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg="
+   crossorigin=""></script> -->
+
+  <title>Lester Ellis Carver</title>
+  <script src = "javascript/secret_keys.js"></script>
   <!--All styling comes from the external css file-->
   <link rel = "stylesheet", type = "text/css" href = "css/main_style.css">
-  <div>
   <script src = "javascript/external.js"></script>
-  </div>
+
 </head>
 <body>
   <div id = "body-container">
@@ -49,6 +59,17 @@
           <span id = 'area_result'></span>
       </form>
     </div>
+    <!-- <h3>My First Webmap</h3>
+    <div id="mapid" style="width: 600px; height: 400px; margin: auto;">
+      <script>
+        var mymap = L.map('mapid').setView([51.505, -0.09], 13);
+        L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}',{
+            maxZoom: 18,
+            id: 'mapbox/streets-v11',
+            accessToken: mapbox_access_token,
+        }).addTo(mymap);
+      </script>
+    </div> -->
     <footer id = "copyright">
       <script>
         //Grab the current date & time

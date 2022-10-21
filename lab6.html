@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" I>
+<meta name="viewport" content=""width=device-width, initial-scale="1.9"›
+<!-- <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"
+     integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14="
+     crossorigin=""/>
+
+<!-- Make sure you put this AFTER Leaflet's CSS -->
+ <!-- <script src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js"
+     integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg="
+     crossorigin=""></script> -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"
+      integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14="
+      crossorigin=""/>
+<!--Adding our custom CSS file-->
+<link rel="stylesheet" type="text/css" href="css/map_style.css" >
+  <!-- Make sure you put this AFTER Leaflet's CSS -->
+<script src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js"
+      integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg="
+      crossorigin=""></script>
+
+  <title>Lester Ellis Carver</title>
+  <script src = "javascript/secret_keys.js"></script>
+  <!--All styling comes from the external css file-->
+  <!-- <link rel = "stylesheet", type = "text/css" href = "css/main_style.css"> -->
+  <script src = "javascript/external.js"></script>
+</head>
+<body>
+<h3>My First Webmap</h3>
+<div id="mapid" style="width: 600px; height: 400px; margin: auto;">
+  <script>
+    //Setting up basemap
+    var mymap = L.map('mapid').setView([51.505, -0.09], 13);
+    L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}',{
+        maxZoom: 18,
+        id: 'mapbox/streets-v11',
+        accessToken: mapbox_access_token,
+    }).addTo(mymap);
+    //Adding a new marker + popup
+    var marker = L.marker([51.5, -0.09]).addTo(mymap);
+    marker.bindPopup("<b>Hello world!</b><br>I am a popup.").openPopup();
+    marker.on('click', function(e){
+      mymap.setView(e.latlng, 14);
+    });
+
+    //Draw circle object + popup
+    var circle = L.circle([51.508, -0.11], {
+    color: 'red',
+    fillColor: '#f03',
+    fillOpacity: 0.5,
+    radius: 500
+  }).addTo(mymap);
+    circle.bindPopup("I am a circle.");
+    circle.on('click', function(e){
+      mymap.setView(e.latlng, 13);
+    });
+
+    //Draw polygon object + popup
+    var polygon = L.polygon([
+    [51.509, -0.08],
+    [51.503, -0.06],
+    [51.51, -0.047]], {
+    }).addTo(mymap);
+    polygon.bindPopup("I am a polygon.");
+    polygon.on('click', function(e){
+      mymap.setView(e.latlng, 13);
+    });
+  </script>
+</div>
+</body>
