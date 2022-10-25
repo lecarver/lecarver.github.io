@@ -103,6 +103,20 @@ li{
   color:#42855B;
 }
 
+#lab-6{
+  text-align: left;
+  margin: 10px;
+}
+#lab-6 a:link{
+  color:#483838;
+}
+#lab-6 a:visited{
+  color:#896565;
+}
+
+#lab-6 a:hover{
+  color:#42855B;
+}
 #webmap-reviews{
     text-align: left;
     font-size: 15px;
