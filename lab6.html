@@ -27,27 +27,38 @@
   <!--All styling comes from the external css file-->
   <!-- <link rel = "stylesheet", type = "text/css" href = "css/main_style.css"> -->
   <script src = "javascript/external.js"></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/opencagedata/leaflet-opencage-search@d4cbd36122efc8d17152b4177ed0e12165305441/dist/css/L.Control.OpenCageData.Search.min.css"/>
+<script src="https://cdn.jsdelivr.net/gh/opencagedata/leaflet-opencage-search@d4cbd36122efc8d17152b4177ed0e12165305441/dist/js/L.Control.OpenCageSearch.min.js"></script>
 </head>
 <body>
 <h3>My First Webmap</h3>
 <div id="mapid" style="width: 600px; height: 400px; margin: auto;">
   <script>
-    //Setting up basemap using the Stamen_Toner basemap
+
     var mymap = L.map('mapid');
-    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {}).addTo(mymap);
+    //Geocoder
+    // var options = {
+    //   key: geocoder_api_key,
+    //   limit: 10
+    // };
+    // var control = L.control.openCageSearch(options).addTo(mymap);
+
+    //Setting up basemap
+    //L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {}).addTo(mymap);
     // L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}',{
     //     maxZoom: 18,
     //     id: 'mapbox/dark-v10',
     //     accessToken: mapbox_access_token,
     // }).addTo(mymap);
-    // L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {}).addTo(mymap);
-    // var Stamen_Toner = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}{r}.{ext}', {
-    // 	attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-    // 	subdomains: 'abcd',
-    // 	minZoom: 0,
-    // 	maxZoom: 20,
-    // 	ext: 'png'
-    // }).addTo(mymap);
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {}).addTo(mymap);
+    var Stamen_Toner = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}{r}.{ext}', {
+    	attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+    	subdomains: 'abcd',
+    	minZoom: 0,
+    	maxZoom: 20,
+    	ext: 'png'
+    }).addTo(mymap);
 
 
     //Adding a new marker + popup
@@ -79,6 +90,13 @@
     polygon.on('click', function(e){
       mymap.setView(e.latlng, 13);
     });
+
+    //Draw polyline
+    var polyline = L.polyline([
+      [51.506, -0.08],
+      [51.502, -0.06],
+      [51.507, -0.047]
+    ]).addTo(mymap);
 
     var ZoomViewer = L.Control.extend({
       onAdd: function(){
