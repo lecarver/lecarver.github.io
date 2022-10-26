@@ -61,7 +61,11 @@
     }).addTo(mymap);
 
     //SEVEN WONDERS OF THE WORLD
-    var taj_mahal = L.marker([27.174961, 78.042385]).addTo(mymap);
+    var tj = L.icon({
+      iconURL: '../images/tajmah.jpg',
+      iconSize: [38, 95]
+    });
+    var taj_mahal = L.marker([27.174961, 78.042385], {icon: tj}).addTo(mymap);
     taj_mahal.bindPopup("<strong>India's Taj Mahal</strong>").openPopup();
     taj_mahal.on('click', function(e){
       mymap.setView(e.latlng, 14);
