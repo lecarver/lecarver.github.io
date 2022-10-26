@@ -60,6 +60,44 @@
     	ext: 'png'
     }).addTo(mymap);
 
+    //SEVEN WONDERS OF THE WORLD
+    var taj_mahal = L.marker([27.174961, 78.042385]).addTo(mymap);
+    taj_mahal.bindPopup("<strong>India's Taj Mahal</strong>").openPopup();
+    taj_mahal.on('click', function(e){
+      mymap.setView(e.latlng, 14);
+    });
+    var great_wall = L.marker([40.334245, 116.477652]).addTo(mymap);
+    great_wall.bindPopup("<strong>Great Wall of China</strong>").openPopup();
+    great_wall.on('click', function(e){
+      mymap.setView(e.latlng, 14);
+    });
+    var petra = L.marker([30.328611, 35.441944]).addTo(mymap);
+    petra.bindPopup("<strong> Jordan's Petra </strong>").openPopup();
+    petra.on('click', function(e){
+      mymap.setView(e.latlng, 14);
+    });
+    var christ = L.marker([-22.951389, -43.2108334]).addTo(mymap);
+    christ.bindPopup("<strong> Brazil's statue of Christ the Redeemer </strong>").openPopup();
+    christ.on('click', function(e){
+      mymap.setView(e.latlng, 14);
+    });
+    var machu_picchu = L.marker([-13.163056, -72.545556]).addTo(mymap);
+    machu_picchu .bindPopup("<strong> Peru's Machu Picchu </strong>").openPopup();
+    machu_picchu .on('click', function(e){
+      mymap.setView(e.latlng, 14);
+    });
+    var chichen_itza = L.marker([20.682778, -88.569167]).addTo(mymap);
+    chichen_itza.bindPopup("<strong> Mexico's Chichen Itza pyramid </strong>").openPopup();
+    chichen_itza.on('click', function(e){
+      mymap.setView(e.latlng, 14);
+    });
+    var colosseum = L.marker([41.890169, 12.492269]).addTo(mymap);
+    colosseum.bindPopup("<strong> Rome'a Colosseum </strong>").openPopup();
+    colosseum.on('click', function(e){
+      mymap.setView(e.latlng, 14);
+    });
+
+
 
     //Adding a new marker + popup
     var marker = L.marker([51.5, -0.09]).addTo(mymap);
