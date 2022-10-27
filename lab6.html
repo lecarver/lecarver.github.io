@@ -94,7 +94,12 @@
       iconSize:[35, 35], // size of the icon
     });
     var petra = L.marker([30.328611, 35.441944], {icon: pet}).addTo(mymap);
-    petra.bindPopup("<strong> Jordan's Petra </strong>").openPopup();
+    petra.bindPopup("<h3> Jordan's Petra </h3> \
+    <img src = '../lecarver.github.io/images/petra.jpg', width = '250px'/> \
+    <p>Petra is a city of hand-hewn caves, temples,tombs, and even a theatre that \
+    could fit more than 3000 people all carved from pink sandstone in Jordan around 2,000 years ago. \
+    It is estimated that only 15% of the city has been uncovered to date and it \
+    was made a UNESCO World Heritage Site in 1985.").openPopup();
     petra.on('click', function(e){
       mymap.setView(e.latlng, 14);
     });
