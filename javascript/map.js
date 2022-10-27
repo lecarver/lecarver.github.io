@@ -15,15 +15,15 @@
     //     id: 'mapbox/dark-v10',
     //     accessToken: mapbox_access_token,
     // }).addTo(mymap);
-    L.tileLayer('https://tile.openstreetmap.org/5/30/10.png', {}).addTo(mymap);
-    // var Stamen_Toner = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}{r}.{ext}', {
-    // 	attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-    // 	subdomains: 'abcd',
-    // 	minZoom: 2,
-    // 	maxZoom: 20,
-    // 	ext: 'png',
-    //   noWrap: true
-    // }).addTo(mymap);
+    //L.tileLayer('https://tile.openstreetmap.org/5/30/10.png', {}).addTo(mymap);
+    var Stamen_Toner = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}{r}.{ext}', {
+    	attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+    	subdomains: 'abcd',
+    	minZoom: 2,
+    	maxZoom: 20,
+    	ext: 'png',
+      noWrap: true
+    }).addTo(mymap);
 
     //SEVEN WONDERS OF THE WORLD -- with custom icons
     var tj = L.icon({
