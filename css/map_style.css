@@ -2,6 +2,7 @@
 .leaflet-popup-tip{
     background: #90B77D;
     font-family: monospace;
-    font-size:16px;
     line-height:24px;
+
 }
+.leaflet-popup-content img { margin: 0 auto; display:block; }

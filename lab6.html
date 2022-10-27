@@ -65,7 +65,13 @@
       iconSize:[35, 35], // size of the icon
     });
     var taj_mahal = L.marker([27.174961, 78.042385], {icon: tj}).addTo(mymap);
-    taj_mahal.bindPopup("<strong>India's Taj Mahal</strong>").openPopup();
+    taj_mahal.bindPopup("<h3>India's Taj Mahal</h3> \
+    <img src = '../lecarver.github.io/images/taj_mahal.jpg', width = '250px', align = 'center'/> \
+    <p>The Taj Mahal is an Islamic ivory-white marble mausoleum on the right \
+    bank of the river Yamuna in the Indian city of Agra. It was commissioned in \
+    1631 by the Mughal emperor Shah Jahan (r. 1628–1658) to house the tomb of \
+    his favourite wife, Mumtaz Mahal. It was designated a UNESCO World Heritage \
+    Site in 1983.</p>").openPopup();
     taj_mahal.on('click', function(e){
       mymap.setView(e.latlng, 14);
     });
@@ -125,42 +131,42 @@
     });
 
 
-    //Adding a new marker + popup
-    var marker = L.marker([51.5, -0.09]).addTo(mymap);
-    marker.bindPopup("<b>Hello world!</b><br>I am a popup.").openPopup();
-    marker.on('click', function(e){
-      mymap.setView(e.latlng, 14);
-    });
-
-    //Draw circle object + popup
-    var circle = L.circle([51.508, -0.11], {
-    color: 'red',
-    fillColor: '#f03',
-    fillOpacity: 0.5,
-    radius: 500
-  }).addTo(mymap);
-    circle.bindPopup("I am a circle.");
-    circle.on('click', function(e){
-      mymap.setView(e.latlng, 13);
-    });
-
-    //Draw polygon object + popup
-    var polygon = L.polygon([
-    [51.509, -0.08],
-    [51.503, -0.06],
-    [51.51, -0.047]], {
-    }).addTo(mymap);
-    polygon.bindPopup("I am a polygon.");
-    polygon.on('click', function(e){
-      mymap.setView(e.latlng, 13);
-    });
-
-    //Draw polyline
-    var polyline = L.polyline([
-      [51.506, -0.08],
-      [51.502, -0.06],
-      [51.507, -0.047]
-    ]).addTo(mymap);
+  //   //Adding a new marker + popup
+  //   var marker = L.marker([51.5, -0.09]).addTo(mymap);
+  //   marker.bindPopup("<b>Hello world!</b><br>I am a popup.").openPopup();
+  //   marker.on('click', function(e){
+  //     mymap.setView(e.latlng, 14);
+  //   });
+  //
+  //   //Draw circle object + popup
+  //   var circle = L.circle([51.508, -0.11], {
+  //   color: 'red',
+  //   fillColor: '#f03',
+  //   fillOpacity: 0.5,
+  //   radius: 500
+  // }).addTo(mymap);
+  //   circle.bindPopup("I am a circle.");
+  //   circle.on('click', function(e){
+  //     mymap.setView(e.latlng, 13);
+  //   });
+  //
+  //   //Draw polygon object + popup
+  //   var polygon = L.polygon([
+  //   [51.509, -0.08],
+  //   [51.503, -0.06],
+  //   [51.51, -0.047]], {
+  //   }).addTo(mymap);
+  //   polygon.bindPopup("I am a polygon.");
+  //   polygon.on('click', function(e){
+  //     mymap.setView(e.latlng, 13);
+  //   });
+  //
+  //   //Draw polyline
+  //   var polyline = L.polyline([
+  //     [51.506, -0.08],
+  //     [51.502, -0.06],
+  //     [51.507, -0.047]
+  //   ]).addTo(mymap);
 
     var ZoomViewer = L.Control.extend({
       onAdd: function(){
