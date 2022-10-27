@@ -1,6 +1,8 @@
 <!doctype html>
 <html>
 <head>
+
+  <!--SCRIPTS & STYLESHEETS FOR LEAFLET-->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"
        integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14="
        crossorigin=""/>
@@ -12,29 +14,22 @@
         integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14="
         crossorigin=""/>
 
-  <!--Adding our custom CSS file-->
-  <link rel="stylesheet" type="text/css" href="css/map_style.css" >
-
     <!-- Make sure you put this AFTER Leaflet's CSS -->
   <script src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js"
         integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg="
         crossorigin=""></script>
-    <title>Seven Wonders of the World</title>
-    <script src = "javascript/secret_keys.js"></script>
-    <!--All styling comes from the external css file-->
-    <!-- <link rel = "stylesheet", type = "text/css" href = "css/main_style.css"> -->
-    <script src = "javascript/external.js"></script>
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/opencagedata/leaflet-opencage-search@d4cbd36122efc8d17152b4177ed0e12165305441/dist/css/L.Control.OpenCageData.Search.min.css"/>
   <script src="https://cdn.jsdelivr.net/gh/opencagedata/leaflet-opencage-search@d4cbd36122efc8d17152b4177ed0e12165305441/dist/js/L.Control.OpenCageSearch.min.js"></script>
 
-  <!-- Scripts for mini-map plugin -->
+  <!--SCRIPTS FOR PLUGINS-->
+  <!--Script for mini-map plugin -->
   <script src="https://cdn.jsdelivr.net/gh/maneoverland/leaflet.WorldMiniMap@1.0.0/dist/Control.WorldMiniMap.js" integrity="sha512-PFw8St3qenU1/dmwCfiYYN/bRcqY1p3+sBATR+rZ6622eyXOk/8izVtlmm/k8qW7KbRIJsku838WCV5LMs6FCg==" crossorigin=""></script>
 
   <!--Script for coordinates plugin-->
   <script src = "javascript/coordinates.js"></script>
 
-  <!--Script for home button plugin-->
+  <!--Scripts & stylesheet for home button plugin-->
   <script src="javascript/leaflet.zoomhome.min.js"></script>
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"/>
 
@@ -43,11 +38,13 @@
 
 
   <title>Lester Ellis Carver</title>
+  <!--MY SCRIPTS & STYLESHEETS-->
   <script src = "javascript/secret_keys.js"></script>
   <script src = "javascript/external.js"></script>
   <script src = "javascript/map.js"></script>
-  <!--All styling comes from the external css file-->
+
   <link rel = "stylesheet", type = "text/css" href = "css/main_style.css">
+  <link rel="stylesheet" type="text/css" href="css/map_style.css" >
 
 </head>
 <body>
