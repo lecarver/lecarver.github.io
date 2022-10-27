@@ -1,22 +1,54 @@
 <!doctype html>
 <html>
 <head>
-  <!-- <meta charset="utf-8" I>
-  <meta name="viewport" content=""width=device-width, initial-scale="1.9"›
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"
-   integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14="
-   crossorigin=""/> -->
-<!-- Make sure you put this AFTER Leaflet's CSS -->
-  <!-- <script src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js"
-   integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg="
-   crossorigin=""></script> -->
+       integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14="
+       crossorigin=""/>
+
+  <script src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js"
+       integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg="
+       crossorigin=""></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"
+        integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14="
+        crossorigin=""/>
+
+  <!--Adding our custom CSS file-->
+  <link rel="stylesheet" type="text/css" href="css/map_style.css" >
+
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+  <script src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js"
+        integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg="
+        crossorigin=""></script>
+    <title>Seven Wonders of the World</title>
+    <script src = "javascript/secret_keys.js"></script>
+    <!--All styling comes from the external css file-->
+    <!-- <link rel = "stylesheet", type = "text/css" href = "css/main_style.css"> -->
+    <script src = "javascript/external.js"></script>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/opencagedata/leaflet-opencage-search@d4cbd36122efc8d17152b4177ed0e12165305441/dist/css/L.Control.OpenCageData.Search.min.css"/>
+  <script src="https://cdn.jsdelivr.net/gh/opencagedata/leaflet-opencage-search@d4cbd36122efc8d17152b4177ed0e12165305441/dist/js/L.Control.OpenCageSearch.min.js"></script>
+
+  <!-- Scripts for mini-map plugin -->
+  <script src="https://cdn.jsdelivr.net/gh/maneoverland/leaflet.WorldMiniMap@1.0.0/dist/Control.WorldMiniMap.js" integrity="sha512-PFw8St3qenU1/dmwCfiYYN/bRcqY1p3+sBATR+rZ6622eyXOk/8izVtlmm/k8qW7KbRIJsku838WCV5LMs6FCg==" crossorigin=""></script>
+
+  <!--Script for coordinates plugin-->
+  <script src = "javascript/coordinates.js"></script>
+
+  <!--Script for home button plugin-->
+  <script src="javascript/leaflet.zoomhome.min.js"></script>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"/>
+
+  <!--Script for credit buttom plugin-->
+  <script type="text/javascript" src="javascript/leaflet-control-credits.js"></script>
+
 
   <title>Lester Ellis Carver</title>
   <script src = "javascript/secret_keys.js"></script>
-  <!--All styling comes from the external css file-->
-  <link rel = "stylesheet", type = "text/css" href = "css/main_style.css">
   <script src = "javascript/external.js"></script>
   <script src = "javascript/map.js"></script>
+  <!--All styling comes from the external css file-->
+  <link rel = "stylesheet", type = "text/css" href = "css/main_style.css">
+
 </head>
 <body>
   <div id = "body-container">
@@ -63,7 +95,7 @@
       </form>
     </div>
     <div id = "mapid" style="width: 600px; height: 400px; margin: auto;">
-      <script> mymap; </script>
+      <script> document.writeln(mymap); </script>
     </div>
     <footer id = "copyright">
       <script>
