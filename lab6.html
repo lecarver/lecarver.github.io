@@ -38,6 +38,11 @@
 
 <!--Script for Full screen plugin-->
 <script src = "javascript/Control.FullScreen.js"></script>
+
+<!--Script for home button plugin-->
+<script src="javascript/leaflet.zoomhome.min.js"></script>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"/>
+
 </head>
 <body>
 <h1>Seven Wonders of the World</h1><br>
@@ -45,13 +50,7 @@
   <script>
 
 //Adjust map screen control to allow full screen plugin
-    var mymap = L.map('mapid',{
-      fullscreenControl: true,
-      fullscreenControlOptions: {
-        position: 'topleft'
-      },
-      noWrap: true
-  });
+    var mymap = L.map('mapid',{zoomControl: false});
 
     //Geocoder
     // var options = {
@@ -166,6 +165,12 @@
   mymap.on('click', function(e) {
   	c.setCoordinates(e);
   });
+
+  //Add Homescreen button
+  var zoomHome = L.Control.zoomHome({position: 'topleft'});
+  zoomHome.setHomeCoordinates([0,0])
+  zoomHome.setHomeZoom(2)
+  zoomHome.addTo(mymap);
 
   //   //Adding a new marker + popup
   //   var marker = L.marker([51.5, -0.09]).addTo(mymap);
