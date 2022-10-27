@@ -32,6 +32,9 @@
 
 <!-- Scripts for mini-map -->
 <script src="https://cdn.jsdelivr.net/gh/maneoverland/leaflet.WorldMiniMap@1.0.0/dist/Control.WorldMiniMap.js" integrity="sha512-PFw8St3qenU1/dmwCfiYYN/bRcqY1p3+sBATR+rZ6622eyXOk/8izVtlmm/k8qW7KbRIJsku838WCV5LMs6FCg==" crossorigin=""></script>
+<!--Script for coordinates-->
+<script src = "javascript/coordinates.js"></script>
+
 </head>
 <body>
 <h1>Seven Wonders of the World</h1><br>
@@ -143,7 +146,14 @@
       mymap.setView(e.latlng, 14);
     });
   //Add mini-map plugin to the map
-  var worldMiniMap = L.control.worldMiniMap({position: 'bottomleft', style: {opacity: 0.9, borderRadius: '0px', backgroundColor: '#90B77D'}}).addTo(mymap);
+  var worldMiniMap = L.control.worldMiniMap({position: 'bottomright', style: {opacity: 0.9, borderRadius: '0px', backgroundColor: '#90B77D'}}).addTo(mymap);
+
+  var c = new L.Control.Coordinates();
+  c.addTo(mymap);
+  mymap.on('click', function(e) {
+  	c.setCoordinates(e);
+  });
+
   //   //Adding a new marker + popup
   //   var marker = L.marker([51.5, -0.09]).addTo(mymap);
   //   marker.bindPopup("<b>Hello world!</b><br>I am a popup.").openPopup();
