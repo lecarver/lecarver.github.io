@@ -28,3 +28,37 @@
 .leaflet-control-zoomhome a {
     font: bold 18px "Lucida Console",Monaco,monospace;
 }
+
+/*CSS for credits button*/
+.leaflet-credits-control {
+    margin-right:5 !important;
+    margin-bottom:0 !important;
+
+    height:39px;        /* defined in the JavaScript code */
+    padding-right:39px; /* defined in the JavaScript code */
+
+    background-image:none; /* defined in the JavaScript code */
+    background-repeat:no-repeat;
+    background-position:100% 0;
+
+    background-color:#90B77D
+    opacity:0.50;
+    border-radius:5px;
+    border:4px solid #90B77D;
+    cursor:pointer;
+}
+.leaflet-credits-control a {
+    font-size:9pt;
+    font-family: monospace;
+    color:#90B77D !important;
+    text-decoration:none;
+    text-align:right;
+    display:none; /* becomes visible on mouse hover, see creditsControl */
+}
+.leaflet-credits-control a.leaflet-credits-showlink {
+    display:inline-block;
+    padding-left:5px;
+    padding-right:5px;
+    margin-top:5px;
+    line-height:15px;
+}
