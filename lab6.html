@@ -21,7 +21,7 @@
 <script src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js"
       integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg="
       crossorigin=""></script>
-  <title>Lester Ellis Carver</title>
+  <title>Seven Wonders of the World</title>
   <script src = "javascript/secret_keys.js"></script>
   <!--All styling comes from the external css file-->
   <!-- <link rel = "stylesheet", type = "text/css" href = "css/main_style.css"> -->
@@ -29,9 +29,12 @@
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/opencagedata/leaflet-opencage-search@d4cbd36122efc8d17152b4177ed0e12165305441/dist/css/L.Control.OpenCageData.Search.min.css"/>
 <script src="https://cdn.jsdelivr.net/gh/opencagedata/leaflet-opencage-search@d4cbd36122efc8d17152b4177ed0e12165305441/dist/js/L.Control.OpenCageSearch.min.js"></script>
+
+<!-- Scripts for mini-map -->
+<script src="https://cdn.jsdelivr.net/gh/maneoverland/leaflet.WorldMiniMap@1.0.0/dist/Control.WorldMiniMap.js" integrity="sha512-PFw8St3qenU1/dmwCfiYYN/bRcqY1p3+sBATR+rZ6622eyXOk/8izVtlmm/k8qW7KbRIJsku838WCV5LMs6FCg==" crossorigin=""></script>
 </head>
 <body>
-<h3>My First Webmap</h3>
+<h1>Seven Wonders of the World</h1><br>
 <div id="mapid" style="width: 600px; height: 400px; margin: auto;">
   <script>
 
@@ -139,8 +142,8 @@
     colosseum.on('click', function(e){
       mymap.setView(e.latlng, 14);
     });
-
-
+  //Add mini-map plugin to the map
+  var worldMiniMap = L.control.worldMiniMap({position: 'bottomleft', style: {opacity: 0.9, borderRadius: '0px', backgroundColor: '#90B77D'}}).addTo(mymap);
   //   //Adding a new marker + popup
   //   var marker = L.marker([51.5, -0.09]).addTo(mymap);
   //   marker.bindPopup("<b>Hello world!</b><br>I am a popup.").openPopup();
