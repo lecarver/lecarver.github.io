@@ -36,13 +36,22 @@
 <!--Script for coordinates plugin-->
 <script src = "javascript/coordinates.js"></script>
 
+<!--Script for Full screen plugin-->
+<script src = "javascript/Control.FullScreen.js"></script>
 </head>
 <body>
 <h1>Seven Wonders of the World</h1><br>
 <div id="mapid" style="width: 600px; height: 400px; margin: auto;">
   <script>
 
-    var mymap = L.map('mapid');
+//Adjust map screen control to allow full screen plugin
+    var mymap = L.map('mapid',{
+      fullscreenControl: true,
+      fullscreenControlOptions: {
+        position: 'topleft'
+      }
+  });
+
     //Geocoder
     // var options = {
     //   key: geocoder_api_key,
@@ -149,6 +158,7 @@
   //Add mini-map plugin to the map
   var worldMiniMap = L.control.worldMiniMap({position: 'bottomright', style: {opacity: 0.9, borderRadius: '0px', backgroundColor: '#90B77D'}}).addTo(mymap);
 
+  //Add coordinates plugin to the map
   var c = new L.Control.Coordinates();
   c.addTo(mymap);
   mymap.on('click', function(e) {
