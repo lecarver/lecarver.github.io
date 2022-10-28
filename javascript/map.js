@@ -3,11 +3,11 @@ function webmap() {
     var mymap = L.map('mapid',{zoomControl: false});
 
     //Geocoder
-    // var options = {
-    //   key: geocoder_api_key,
-    //   limit: 10
-    // };
-    // var control = L.control.openCageSearch(options).addTo(mymap);
+    var options = {
+      key: geocoder_api_key,
+      limit: 10,
+    };
+    var control = L.Control.openCageGeocoding(options).addTo(mymap);
 
     //Setting up basemap
     //L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {}).addTo(mymap);
