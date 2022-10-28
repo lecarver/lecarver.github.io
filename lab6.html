@@ -43,6 +43,12 @@
 <!--Script for credit buttom plugin-->
 <script type="text/javascript" src="javascript/leaflet-control-credits.js"></script>
 
+<!--Geocoder Plugin-->
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/opencagedata/leaflet-opencage-search@d4cbd36122efc8d17152b4177ed0e12165305441/dist/css/L.Control.OpenCageData.Search.min.css" />
+<script src="https://cdn.jsdelivr.net/gh/opencagedata/leaflet-opencage-search@d4cbd36122efc8d17152b4177ed0e12165305441/dist/js/L.Control.OpenCageSearch.min.js"></script> -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/opencagedata/leaflet-opencage-geocoding@v2.0.0/dist/css/L.Control.OpenCageGeocoding.min.css" />
+<script src="https://cdn.jsdelivr.net/gh/opencagedata/leaflet-opencage-geocoding@v2.0.0/dist/js/L.Control.OpenCageGeocoding.min.js"></script>
+
 </head>
 <body>
 <h1>Seven Wonders of the World</h1><br>
@@ -52,12 +58,23 @@
 //Adjust map screen control to allow full screen plugin
     var mymap = L.map('mapid',{zoomControl: false});
 
-    //Geocoder
+    // //Geocoder Plugin
     // var options = {
     //   key: geocoder_api_key,
     //   limit: 10
     // };
     // var control = L.control.openCageSearch(options).addTo(mymap);
+    // var mymap = L.map('mapid').setView([51.52255, -0.10249], 13);
+    var options = {
+      key: geocoder_api_key,
+      limit: 10,
+    };
+    var control = L.Control.openCageGeocoding(options).addTo(mymap);
+    // L.tileLayer('http://tile.osm.org/{z}/{x}/{y}.png', {
+    //   attribution:
+    // '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
+    // }).addTo(mymap);
+
 
     //Setting up basemap
     //L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {}).addTo(mymap);

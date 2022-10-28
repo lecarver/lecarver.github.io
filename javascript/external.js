@@ -46,23 +46,6 @@ function webmap_table(){
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //HW 3
 // name = window.prompt("Please enter your name");
 // document.write(name);
