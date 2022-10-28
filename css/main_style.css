@@ -143,6 +143,7 @@ text and set the text and background colors.*/
 #copyright {
   width: inherit;
   text-align: center;
+  margin-top: 5px;
   margin-bottom: 5px;
   padding: 3px;
   background-color: #483838;
