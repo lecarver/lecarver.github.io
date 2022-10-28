@@ -40,7 +40,7 @@ function webmap() {
     his favourite wife, Mumtaz Mahal. It was designated a UNESCO World Heritage \
     Site in 1983.</p>").openPopup();
     taj_mahal.on('click', function(e){
-      mymap.setView(e.latlng, 14);
+      mymap.setView(e.latlng, 12);
     });
     var wall = L.icon({
       iconUrl: '../lecarver.github.io/images/gwall.png',
@@ -54,7 +54,7 @@ function webmap() {
     Win Shi Huang, the first emperor of the Qin dynasty, to protect against invasion \
     by nomads from central Asia. </p>").openPopup();
     great_wall.on('click', function(e){
-      mymap.setView(e.latlng, 14);
+      mymap.setView(e.latlng, 12);
     });
     var pet = L.icon({
       iconUrl: '../lecarver.github.io/images/petra.png',
@@ -68,7 +68,7 @@ function webmap() {
     It is estimated that only 15% of the city has been uncovered to date and it \
     was made a UNESCO World Heritage Site in 1985.").openPopup();
     petra.on('click', function(e){
-      mymap.setView(e.latlng, 14);
+      mymap.setView(e.latlng, 12);
     });
     var chrst = L.icon({
       iconUrl: '../lecarver.github.io/images/christ.png',
@@ -77,7 +77,7 @@ function webmap() {
     var christ = L.marker([-22.951389, -43.2108334], {icon: chrst}).addTo(mymap);
     christ.bindPopup("<strong> Brazil's statue of Christ the Redeemer </strong>").openPopup();
     christ.on('click', function(e){
-      mymap.setView(e.latlng, 14);
+      mymap.setView(e.latlng, 12);
     });
     var mp = L.icon({
       iconUrl: '../lecarver.github.io/images/macpic.png',
@@ -86,7 +86,7 @@ function webmap() {
     var machu_picchu = L.marker([-13.163056, -72.545556], {icon: mp}).addTo(mymap);
     machu_picchu .bindPopup("<strong> Peru's Machu Picchu </strong>").openPopup();
     machu_picchu .on('click', function(e){
-      mymap.setView(e.latlng, 14);
+      mymap.setView(e.latlng, 12);
     });
     var ci = L.icon({
       iconUrl: '../lecarver.github.io/images/chitz.png',
@@ -95,7 +95,7 @@ function webmap() {
     var chichen_itza = L.marker([20.682778, -88.569167], {icon: ci}).addTo(mymap);
     chichen_itza.bindPopup("<strong> Mexico's Chichen Itza pyramid </strong>").openPopup();
     chichen_itza.on('click', function(e){
-      mymap.setView(e.latlng, 14);
+      mymap.setView(e.latlng, 12);
     });
     var colo = L.icon({
       iconUrl: '../lecarver.github.io/images/colo.png',
@@ -104,7 +104,7 @@ function webmap() {
     var colosseum = L.marker([41.890169, 12.492269], {icon: colo}).addTo(mymap);
     colosseum.bindPopup("<strong> Rome'a Colosseum </strong>").openPopup();
     colosseum.on('click', function(e){
-      mymap.setView(e.latlng, 14);
+      mymap.setView(e.latlng, 12);
     });
   //Add mini-map plugin to the map
   var worldMiniMap = L.control.worldMiniMap({position: 'bottomright', style: {opacity: 0.9, borderRadius: '0px', backgroundColor: '#90B77D'}}).addTo(mymap);
