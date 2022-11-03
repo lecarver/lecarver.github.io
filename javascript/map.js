@@ -80,8 +80,7 @@ function webmap() {
     Christ the Redeemer is an Art Deco statue of Jesus Christ in Rio de Janeiro,\
     Brazil, created by French sculptor Paul Landowski and built by Brazilian \
     engineer Heitor da Silva Costa. The statue weighs 635 metric tons\
-    and is located at the peak of the Corcovado mountain in the Tijuca National Park.
-     ").openPopup();
+    and is located at the peak of the Corcovado mountain in the Tijuca National Park.").openPopup();
     christ.on('click', function(e){
       mymap.setView(e.latlng, 12);
     });
@@ -94,8 +93,7 @@ function webmap() {
     <img src = '../lecarver.github.io/images/macpic.jpg', width = '250px'/> \
     Machu Picchu is a 15th-century Inca citadel located in the Eastern \
     Cordillera of southern Peru on a 2,430-meter mountain ridge. was declared a \
-    Peruvian Historic Sanctuary in 1981 and a UNESCO World Heritage Site in 1983.
-    ").openPopup();
+    Peruvian Historic Sanctuary in 1981 and a UNESCO World Heritage Site in 1983.").openPopup();
     machu_picchu .on('click', function(e){
       mymap.setView(e.latlng, 12);
     });
@@ -104,7 +102,13 @@ function webmap() {
       iconSize:[45, 45], // size of the icon
     });
     var chichen_itza = L.marker([20.682778, -88.569167], {icon: ci}).addTo(mymap);
-    chichen_itza.bindPopup("<strong> Mexico's Chichen Itza pyramid </strong>").openPopup();
+    chichen_itza.bindPopup("<h3> Mexico's Chichen Itza pyramid </h3> \
+    <img src = '../lecarver.github.io/images/chitz.jpg', width = '250px'/> \
+    Also known as the Temple of Kukulcán, the pyramid is a \
+    Mesoamerican step-pyramid laying at the center of the Chichen Itza \
+    archaeological site in the Mexican state of Yucatán. Interestingly, the \
+    pyramid mimics the chirping sound of the quetzal bird when humans clap their \
+    hands around it, which researchers believe was intentional in the pyramid's design.").openPopup();
     chichen_itza.on('click', function(e){
       mymap.setView(e.latlng, 12);
     });
@@ -113,7 +117,11 @@ function webmap() {
       iconSize:[45, 45], // size of the icon
     });
     var colosseum = L.marker([41.890169, 12.492269], {icon: colo}).addTo(mymap);
-    colosseum.bindPopup("<strong> Rome'a Colosseum </strong>").openPopup();
+    colosseum.bindPopup("<h3> Rome'a Colosseum </h3> \
+    <img src = '../lecarver.github.io/images/colo.jpg', width = '250px'/> \
+    The Colosseum is an oval amphitheatre in the heart of Rome, Italy. It is the \
+    largest ancient amphitheatre ever built, and is still the largest standing \
+    and was used for public spectacles including animal hunts, executions, and battle reenactments.").openPopup();
     colosseum.on('click', function(e){
       mymap.setView(e.latlng, 12);
     });
