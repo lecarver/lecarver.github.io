@@ -36,7 +36,7 @@ function webmap() {
     <img src = '../lecarver.github.io/images/taj_mahal.jpg', width = '250px'/> \
     <p>The Taj Mahal is an Islamic ivory-white marble mausoleum on the right \
     bank of the river Yamuna in the Indian city of Agra. It was commissioned in \
-    1631 by the Mughal emperor Shah Jahan (r. 1628–1658) to house the tomb of \
+    1631 by the Mughal emperor Shah Jahan (r. 1628-1658) to house the tomb of \
     his favourite wife, Mumtaz Mahal. It was designated a UNESCO World Heritage \
     Site in 1983.</p>").openPopup();
     taj_mahal.on('click', function(e){
@@ -75,7 +75,13 @@ function webmap() {
       iconSize:[45, 45], // size of the icon
     });
     var christ = L.marker([-22.951389, -43.2108334], {icon: chrst}).addTo(mymap);
-    christ.bindPopup("<strong> Brazil's statue of Christ the Redeemer </strong>").openPopup();
+    christ.bindPopup("<h3> Brazil's statue of Christ the Redeemer </h3> \
+    <img src = '../lecarver.github.io/images/christ.jpg', width = '250px'/> \
+    Christ the Redeemer is an Art Deco statue of Jesus Christ in Rio de Janeiro,\
+    Brazil, created by French sculptor Paul Landowski and built by Brazilian \
+    engineer Heitor da Silva Costa. The statue weighs 635 metric tons\
+    and is located at the peak of the Corcovado mountain in the Tijuca National Park.
+     ").openPopup();
     christ.on('click', function(e){
       mymap.setView(e.latlng, 12);
     });
@@ -84,7 +90,12 @@ function webmap() {
       iconSize:[45, 45], // size of the icon
     });
     var machu_picchu = L.marker([-13.163056, -72.545556], {icon: mp}).addTo(mymap);
-    machu_picchu .bindPopup("<strong> Peru's Machu Picchu </strong>").openPopup();
+    machu_picchu .bindPopup("<h3> Peru's Machu Picchu </h3> \
+    <img src = '../lecarver.github.io/images/macpic.jpg', width = '250px'/> \
+    Machu Picchu is a 15th-century Inca citadel located in the Eastern \
+    Cordillera of southern Peru on a 2,430-meter mountain ridge. was declared a \
+    Peruvian Historic Sanctuary in 1981 and a UNESCO World Heritage Site in 1983.
+    ").openPopup();
     machu_picchu .on('click', function(e){
       mymap.setView(e.latlng, 12);
     });
@@ -119,7 +130,7 @@ function webmap() {
   //Add Homescreen button
   var zoomHome = L.Control.zoomHome({position: 'topleft'});
   zoomHome.setHomeCoordinates([0,0])
-  zoomHome.setHomeZoom(2)
+  zoomHome.setHomeZoom(1)
   zoomHome.addTo(mymap);
 
   //Add credit button to link back to website
