@@ -3,7 +3,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
     <title>Simple Map</title>
-
+    <!-- Make map frame fill our whole screen -->
     <style>
       html,
       body,
@@ -14,16 +14,17 @@
         width: 100%;
       }
     </style>
-
+    <!-- Links to ESRI stylesheets and scripts -->
     <link rel="stylesheet" href="https://js.arcgis.com/4.21/esri/themes/light/main.css" />
     <script src="https://js.arcgis.com/4.21/"></script>
 
     <script>
+      //Add necessary modules for our map
       require(["esri/views/MapView", "esri/Map"], (MapView, Map) => {
-
+      //Create new map with streets basemap
         var map = new Map({ basemap: "streets"
     });
-
+      //Set the map view to zoom level 10, centered on Los Angelos
         var view = new MapView({
           container: "viewDiv",
           map: map,
@@ -35,6 +36,7 @@
   </head>
 
   <body>
+    <!-- Create div element for our map -->
     <div id="viewDiv"></div>
   </body>
 </html>
