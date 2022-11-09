@@ -30,8 +30,10 @@
       var TransportationLayer = new TileLayer({
           url: "https://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Transportation/MapServer"
       });
+      //Sets style for how we will render the mapimage layer.
       var CitiesRenderer = {
       type: "simple", // autocasts as new SimpleRenderer()
+      //Indicates that we will have a yellow 3px point for our cities
       symbol: {
           type: "simple-marker", // autocasts as new SimpleMarkerSymbol()
           size: 3,
@@ -43,6 +45,7 @@
             },
             label: "Cities"
         }};
+      //Call to ArcGIS Server to bring in USA map layer
       var CitiesLayer = new MapImageLayer({
         url: "https://sampleserver6.arcgisonline.com/arcgis/rest/services/USA/MapServer",
         sublayers: [
