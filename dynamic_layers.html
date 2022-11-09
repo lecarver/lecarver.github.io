@@ -20,7 +20,12 @@
 
     <script>
       //Add necessary modules for our map
-      require(["esri/views/MapView", "esri/Map", "esri/layers/TileLayer"], (MapView, Map, TileLayer) => {
+      require([
+        "esri/views/MapView",
+        "esri/Map",
+        "esri/layers/TileLayer",
+      "esri/layers/MapImageLayer"],
+      (MapView, Map, TileLayer, MapImageLayer) => {
       //Add the Transporation Map service from AGOL as a map layer.
       var TransportationLayer = new TileLayer({
           url: "https://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Transportation/MapServer"
