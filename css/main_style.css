@@ -117,6 +117,47 @@ li{
 #lab-6 a:hover{
   color:#42855B;
 }
+
+.dropbtn {
+  background-color: #896565;
+  color: #D6C89F;
+  padding: 16px;
+  border: none;
+  cursor: pointer;
+  font-family: monospace;
+  font-size: 20px;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #483838;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #D6C89F;
+  min-width: 160px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  font-family: monospace;
+}
+
+.dropdown-content a {
+  color: #483838;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+#dropdown a:hover {background-color: #90B77D;}
+
+.show {display: block;}
+
 #webmap-reviews{
     text-align: left;
     font-size: 15px;

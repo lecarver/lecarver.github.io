@@ -44,7 +44,24 @@ function webmap_table(){
   document.write("</table>");
 }
 
+//When the user clicks on the button to toggle the dropdown content
+function dropdown() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
 
+// Close the dropdown if the user clicks anywhere outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
 
 //HW 3
 // name = window.prompt("Please enter your name");
