@@ -2,7 +2,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
-    <title>Basemap Gallery</title>
+    <title>Query</title>
     <!-- Make map frame fill our whole screen -->
     <style>
       html,
@@ -47,6 +47,42 @@
         "dojo/domReady!"],
       (MapView, Map, TileLayer, MapImageLayer, BasemapGallery, Query,
       GraphicsLayer, QueryTask, arrayUtils, dom, on) => {
+
+      var popURL =
+      "https://services.arcgis.com/V6ZHFr6zdgNZuVG0/ArcGIS/rest/services/CaliforniaCities/FeatureServer/0"
+
+      var popupTemplate = {
+        title: "{City}",
+        fieldInfos: [{
+          fieldName: "Population",
+          label: "Population",
+          format: {
+            places: 0,
+            digitSeperator: true
+          }
+        }, {
+          fieldName: "Household",
+          label: "Household",
+          format: {
+            places: 0,
+            digitSeperator: true
+          }
+        }],
+        content:
+        "<b>Population:" + "</b> {Population}" +
+        "<br><b>Households:" + "</b> {Household}" +
+        "<br><b>Latitude:" + "</b> {Latitude}" +
+        "<br><b>Longitude:" + "</b> {Longitude}"
+      };
+      var resultsLayer = new GraphicsLayer();
+      var qTask = new QueryTask({
+        url: popUrl
+      });
+      var params = new Query({
+        returnGeometry: true,
+        outFields: ["*"]
+      });
+
       //Add the Transporation Map service from AGOL as a map layer.
       var TransportationLayer = new TileLayer({
           url: "https://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Transportation/MapServer"
