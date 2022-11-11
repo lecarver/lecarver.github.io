@@ -136,7 +136,7 @@
       var value = dom.byId("valSelect");
 
       function doQuery(){
-        resultsLayer.removeALL();
+        resultsLayer.removeAll();
         params.where = attributeName.value + expressionSign.value + value.value;
         qTask.execute(params)
           .then(getResults)
@@ -149,7 +149,7 @@
         });
         resultsLayer.addMany(popResults);
         view.goTo(popResults).then(function(){
-          view.popURL.open({
+          view.popup.open({
             features: popResults,
             featureMenuOpen: true,
             updateLocationEnabled: true
@@ -159,7 +159,7 @@
         "results found!";
       }
       function promiseRejected(error){
-        console.error("Promise rejected", error.message);
+        console.error("Promise rejected: ", error.message);
       }
       //Add BasemapGallery widge to our map. Allows user to toggle the basemaps
       var basemapGallery = new BasemapGallery({
