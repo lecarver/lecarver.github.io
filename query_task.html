@@ -40,15 +40,15 @@
         "esri/widgets/BasemapGallery",
         "esri/layers/GraphicsLayer",
         "esri/tasks/QueryTask",
-        "esri/tasks/support/Query",
+        "esri/rest/support/Query",
         "dojo/_base/array",
         "dojo/dom",
         "dojo/on",
         "dojo/domReady!"],
       (MapView, Map, TileLayer, MapImageLayer, BasemapGallery, Query,
       GraphicsLayer, QueryTask, arrayUtils, dom, on) => {
-
-      var popURL =
+      //Set up query popup
+      var popUrl =
       "https://services.arcgis.com/V6ZHFr6zdgNZuVG0/ArcGIS/rest/services/CaliforniaCities/FeatureServer/0"
 
       var popupTemplate = {
@@ -125,11 +125,41 @@
           zoom: 10,
           center: [-118.2095, 34.0866]
         });
-      //Define a function to trigger an event (the alert below) when the user clicks on the map.
-      view.on("click", eventHandler);
-      function eventHandler(event){
-        console.log("You just triggered a 'click' event!");
-        alert("You just triggered a 'click' event!");
+
+      //Function for performing querying
+      view.when(function(){
+        view.ui.add("optionsDiv", "bottom-right");
+        on(dom.byId("doBtn"), "click", doQuery);
+      });
+      var attributeName = dom.byId("attSelect");
+      var expressionSign = dom.byId("signSelect");
+      var value = dom.byId("valSelect");
+
+      function doQuery(){
+        resultsLayer.removeALL();
+        params.where = attributeName.value + expressionSign.value + value.value;
+        qTask.execute(params)
+          .then(getResults)
+          .catch(promiseRejected);
+      }
+      function getResults(response){
+        var popResults = arrayUtils.map(response.features, function(feature){
+          feature.popupTemplate = popupTemplate;
+          return feature;
+        });
+        resultsLayer.addMany(popResults);
+        view.goTo(popResults).then(function(){
+          view.popURL.open({
+            features: popResults,
+            featureMenuOpen: true,
+            updateLocationEnabled: true
+          });
+        });
+        dom.byId("printResults").innerHTML = popResults.length +
+        "results found!";
+      }
+      function promiseRejected(error){
+        console.error("Promise rejected", error.message);
       }
       //Add BasemapGallery widge to our map. Allows user to toggle the basemaps
       var basemapGallery = new BasemapGallery({
