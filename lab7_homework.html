@@ -26,6 +26,7 @@
       "esri/layers/FeatureLayer"],
       (MapView, Map, TileLayer, MapImageLayer, FeatureLayer) => {
 
+      //Create styling for the police stations
         var StationRenderer = {
         type: "simple", // autocasts as new SimpleRenderer()
         //Indicates that we will have a yellow 3px point for our cities
@@ -36,7 +37,7 @@
             style: "diamond",
             label: "Police Stations"
           }};
-
+      //Bring in the police stations as a map image layer
       var StationsLayer = new MapImageLayer({
         url: "https://carto.nationalmap.gov/arcgis/rest/services/structures/MapServer",
         sublayers: [
@@ -46,14 +47,15 @@
           }
         ]
       });
-      var CongressLayer = new FeatureLayer({
+      //call in the police shootings feature layer
+      var ShootingLayer = new FeatureLayer({
           url: "https://services.arcgis.com/V6ZHFr6zdgNZuVG0/ArcGIS/rest/services/NYPD_Shooting_Incident_Data__Historic_/FeatureServer",
 
         });
-
+      //Set up new map with dark grey basemap and add our two layers
       var map = new Map({
           basemap: "dark-gray",
-          layers: [CongressLayer, StationsLayer]
+          layers: [ShootingLayer, StationsLayer]
           });
 
       //Set the map view to zoom level 10, centered on New York
