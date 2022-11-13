@@ -23,8 +23,9 @@
       require(["esri/views/MapView",
       "esri/Map", "esri/layers/TileLayer",
       "esri/layers/MapImageLayer",
-      "esri/layers/FeatureLayer"],
-      (MapView, Map, TileLayer, MapImageLayer, FeatureLayer) => {
+      "esri/layers/FeatureLayer",
+      "esri/widgets/TimeSlider"],
+      (MapView, Map, TileLayer, MapImageLayer, FeatureLayer, TimeSlider) => {
 
       //Create styling for the police stations
         var StationRenderer = {
@@ -66,6 +67,16 @@
           center: [-74.0060, 40.7128]
     });
 
+        var timeSlider = new TimeSlider({
+          container: "timeSlider",
+          timeExtent: {
+            start: new Date(2008),
+            end: new Date(2017)
+          },
+          timeVisible: true, // show the time stamps on the timeslider
+          mode: "cumulative-from-start",
+          });
+        view.ui.add(timeSlider, "manual");
 
     });
     </script>
@@ -74,5 +85,11 @@
   <body>
     <!-- Create div element for our map -->
     <div id="viewDiv"></div>
+    <!--Create div element for timeslider-->
+    <div id="timeSlider"></div>
+    <div id="titleDiv" class="esri-widget">
+      <div id="titleText">Police Shootings in NYC</div>
+    </div>
   </body>
+
 </html>
