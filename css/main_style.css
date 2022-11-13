@@ -135,6 +135,7 @@ li{
 .dropdown {
   position: relative;
   display: inline-block;
+  float: left;
 }
 .dropdown-content {
   display: none;

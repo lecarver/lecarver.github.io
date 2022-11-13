@@ -2,7 +2,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
-    <title>Simple Map</title>
+    <title>Lab 7 Assignment</title>
     <!-- Make map frame fill our whole screen -->
     <style>
       html,
@@ -20,17 +20,51 @@
 
     <script>
       //Add necessary modules for our map
-      require(["esri/views/MapView", "esri/Map"], (MapView, Map) => {
-      //Create new map with streets basemap
-        var map = new Map({ basemap: "streets"
-    });
-      //Set the map view to zoom level 10, centered on Los Angelos
+      require(["esri/views/MapView",
+      "esri/Map", "esri/layers/TileLayer",
+      "esri/layers/MapImageLayer",
+      "esri/layers/FeatureLayer"],
+      (MapView, Map, TileLayer, MapImageLayer, FeatureLayer) => {
+
+        var StationRenderer = {
+        type: "simple", // autocasts as new SimpleRenderer()
+        //Indicates that we will have a yellow 3px point for our cities
+        symbol: {
+            type: "simple-marker", // autocasts as new SimpleMarkerSymbol()
+            size: 4,
+            color: "blue",
+            style: "diamond",
+            label: "Police Stations"
+          }};
+
+      var StationsLayer = new MapImageLayer({
+        url: "https://carto.nationalmap.gov/arcgis/rest/services/structures/MapServer",
+        sublayers: [
+          {
+           id: 53,
+           renderer: StationRenderer
+          }
+        ]
+      });
+      var CongressLayer = new FeatureLayer({
+          url: "https://services.arcgis.com/V6ZHFr6zdgNZuVG0/ArcGIS/rest/services/NYPD_Shooting_Incident_Data__Historic_/FeatureServer",
+
+        });
+
+      var map = new Map({
+          basemap: "dark-gray",
+          layers: [CongressLayer, StationsLayer]
+          });
+
+      //Set the map view to zoom level 10, centered on New York
         var view = new MapView({
           container: "viewDiv",
           map: map,
           zoom: 10,
-          center: [-118.2095, 34.0866]
+          center: [-74.0060, 40.7128]
     });
+
+
     });
     </script>
   </head>
