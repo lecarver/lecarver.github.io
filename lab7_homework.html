@@ -27,7 +27,7 @@
       "esri/widgets/TimeSlider",
       "esri/TimeExtent"],
       (MapView, Map, TileLayer, MapImageLayer, FeatureLayer, TimeSlider, TimeExtent) => {
-
+    //MAP IMAGE LAYER ------------------------------
         //Create styling for the police stations
         var StationRenderer = {
         type: "simple", // autocasts as new SimpleRenderer()
@@ -40,8 +40,7 @@
             label: "Police Stations"
           }};
       //Bring in the police stations as a map image layer
-      let layerView;
-      var StationsLayer = new MapImageLayer({
+        var StationsLayer = new MapImageLayer({
         url: "https://carto.nationalmap.gov/arcgis/rest/services/structures/MapServer",
         sublayers: [
           {
@@ -50,7 +49,23 @@
           }
         ]
       });
-      //call in the police shootings feature layer
+    //FEATURE LAYER -------------------------------------
+      //set up empty layerView variable for use in TimeSlider later on
+      let layerView;
+      //Create rendering properties for the feature layer
+      var ShootingRender = {
+        type: "simple",
+        symbol: {
+          type: "simple-marker",
+          size: 4,
+          color: "#ff9200",
+          outline: {
+            color: "#ff0000"
+          }
+        }
+
+      }
+      //Call in the feature layer from arcgis server, including time properties & additional rendering effects
       var ShootingLayer = new FeatureLayer({
           url: "https://services.arcgis.com/V6ZHFr6zdgNZuVG0/ArcGIS/rest/services/NYPD_Shooting_Incident_Data__Historic_/FeatureServer",
           timeExtent: {
@@ -63,8 +78,12 @@
               unit: "days",
               value: 1
             }
-          }
+          },
+          renderer: ShootingRender,
+          effect: "bloom(0.8, 0.4px, 0%)  blur(2.7px)"
         });
+
+    //BASEMAP & MAPVIEW --------------------------------------
       //Set up new map with dark grey basemap and add our two layers
       var map = new Map({
           basemap: "dark-gray",
@@ -77,12 +96,13 @@
           map: map,
           zoom: 10,
           center: [-74.0060, 40.7128],
-          timeExtent: {
-            start: new Date(2005, 11, 30 ),
-            end: new Date(2020, 11, 30)
-          }
+          // timeExtent: {
+          //   start: new Date(2005, 11, 30 ),
+          //   end: new Date(2020, 11, 30)
+          // }
     });
-
+    //TIMESLIDR WIDGET -----------------------------------------
+      //create timeslider object, setting the interval to match time extent of feature layer
         var timeSlider = new TimeSlider({
           container: "timeSlider",
           playRate: 50,
@@ -97,26 +117,26 @@
             end: new Date(2020, 11, 30)
           },
           timeVisible: true, // show the time stamps on the timeslider
-          mode: "cumulative-from-start",
+          mode: "instant",
           });
         view.ui.add(timeSlider, "manual");
 
-        view.whenLayerView(ShootingLayer).then((lv) => {
-          layerView = lv;
-          const start = new Date(2005, 11, 30);
-          timeSlider.fullTimeExtent = {
-              start: start,
-              end: ShootingLayer.timeInfo.fullTimeExtent.end
-            };
-          let end = new Date(start);
-          end.setDate(end.getDate() + 1);
-          timeSlider.timeExtent = {start, end};
-        });
-
-        timeSlider.watch("timeExtent", () => {
-          ShootingLayer.definitionExpression =
-            "OCCUR_DATE <= " + timeSlider.timeExtent.end.getTime();
-          });
+        // view.whenLayerView(ShootingLayer).then((lv) => {
+        //   layerView = lv;
+        //   const start = new Date(2005, 11, 30);
+        //   timeSlider.fullTimeExtent = {
+        //       start: start,
+        //       end: ShootingLayer.timeInfo.fullTimeExtent.end
+        //     };
+        //   let end = new Date(start);
+        //   end.setDate(end.getDate() + 1);
+        //   timeSlider.timeExtent = {start, end};
+        // });
+        //
+        // timeSlider.watch("timeExtent", () => {
+        //   ShootingLayer.definitionExpression =
+        //     "OCCUR_DATE <= " + timeSlider.timeExtent.end.getTime();
+        //   });
 
 });
 
