@@ -24,10 +24,11 @@
       "esri/Map", "esri/layers/TileLayer",
       "esri/layers/MapImageLayer",
       "esri/layers/FeatureLayer",
-      "esri/widgets/TimeSlider"],
-      (MapView, Map, TileLayer, MapImageLayer, FeatureLayer, TimeSlider) => {
+      "esri/widgets/TimeSlider",
+      "esri/TimeExtent"],
+      (MapView, Map, TileLayer, MapImageLayer, FeatureLayer, TimeSlider, TimeExtent) => {
 
-      //Create styling for the police stations
+        //Create styling for the police stations
         var StationRenderer = {
         type: "simple", // autocasts as new SimpleRenderer()
         //Indicates that we will have a yellow 3px point for our cities
@@ -39,6 +40,7 @@
             label: "Police Stations"
           }};
       //Bring in the police stations as a map image layer
+      let layerView;
       var StationsLayer = new MapImageLayer({
         url: "https://carto.nationalmap.gov/arcgis/rest/services/structures/MapServer",
         sublayers: [
@@ -87,7 +89,7 @@
           stops: {
             interval: {
               value: 1,
-              unit: "months"
+              unit: "days"
             }
           },
           fullTimeExtent: {
@@ -110,6 +112,12 @@
           end.setDate(end.getDate() + 1);
           timeSlider.timeExtent = {start, end};
         });
+
+        timeSlider.watch("timeExtent", () => {
+          ShootingLayer.definitionExpression =
+            "OCCUR_DATE <= " + timeSlider.timeExtent.end.getTime();
+          });
+
 });
 
   </script>
