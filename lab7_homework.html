@@ -51,7 +51,17 @@
       //call in the police shootings feature layer
       var ShootingLayer = new FeatureLayer({
           url: "https://services.arcgis.com/V6ZHFr6zdgNZuVG0/ArcGIS/rest/services/NYPD_Shooting_Incident_Data__Historic_/FeatureServer",
-
+          timeExtent: {
+            start: new Date(2005, 11, 30 ),
+            end: new Date(2020, 11, 30)
+          },
+          timeInfo: {
+            startField: "OCCUR_DATE",
+            interval: {
+              unit: "days",
+              value: 1
+            }
+          }
         });
       //Set up new map with dark grey basemap and add our two layers
       var map = new Map({
@@ -64,22 +74,45 @@
           container: "viewDiv",
           map: map,
           zoom: 10,
-          center: [-74.0060, 40.7128]
+          center: [-74.0060, 40.7128],
+          timeExtent: {
+            start: new Date(2005, 11, 30 ),
+            end: new Date(2020, 11, 30)
+          }
     });
 
         var timeSlider = new TimeSlider({
           container: "timeSlider",
-          timeExtent: {
-            start: new Date(2008),
-            end: new Date(2017)
+          playRate: 50,
+          stops: {
+            interval: {
+              value: 1,
+              unit: "months"
+            }
+          },
+          fullTimeExtent: {
+            start: new Date(2005, 11, 30 ),
+            end: new Date(2020, 11, 30)
           },
           timeVisible: true, // show the time stamps on the timeslider
           mode: "cumulative-from-start",
           });
         view.ui.add(timeSlider, "manual");
-    });
 
-    </script>
+        view.whenLayerView(ShootingLayer).then((lv) => {
+          layerView = lv;
+          const start = new Date(2005, 11, 30);
+          timeSlider.fullTimeExtent = {
+              start: start,
+              end: ShootingLayer.timeInfo.fullTimeExtent.end
+            };
+          let end = new Date(start);
+          end.setDate(end.getDate() + 1);
+          timeSlider.timeExtent = {start, end};
+        });
+});
+
+  </script>
   </head>
 
   <body>
