@@ -121,21 +121,22 @@ li{
 .dropbtn {
   background-color: #896565;
   color: #D6C89F;
+  font-family: monospace;
+  font-size: 20px;
   padding: 16px;
   border: none;
   cursor: pointer;
-  font-family: monospace;
-  font-size: 20px;
 }
 
 .dropbtn:hover, .dropbtn:focus {
   background-color: #483838;
 }
 
-.dropdown {
+#dropdown {
   position: relative;
   display: inline-block;
   float: left;
+  margin-left: 5px;
 }
 .dropdown-content {
   display: none;
