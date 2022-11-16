@@ -40,7 +40,8 @@
         "esri/widgets/BasemapGallery",
         "esri/layers/GraphicsLayer",
         "esri/tasks/QueryTask",
-        "esri/tasks/support/Query",
+        //"esri/tasks/support/Query",
+        "esri/rest/support/Query",
         "dojo/_base/array",
         "dojo/dom",
         "dojo/on",
@@ -136,6 +137,7 @@
       var value = dom.byId("valSelect");
 
       function doQuery(){
+        console.log(resultsLayer);
         resultsLayer.removeAll();
         params.where = attributeName.value + expressionSign.value + value.value;
         qTask.execute(params)

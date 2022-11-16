@@ -68,17 +68,22 @@
       //Call in the feature layer from arcgis server, including time properties & additional rendering effects
       var ShootingLayer = new FeatureLayer({
           url: "https://services.arcgis.com/V6ZHFr6zdgNZuVG0/ArcGIS/rest/services/NYPD_Shooting_Incident_Data__Historic_/FeatureServer",
-          timeExtent: {
-            start: new Date(2005, 11, 30 ),
-            end: new Date(2020, 11, 30)
-          },
+          // timeExtent: {
+          //   start: new Date(2005, 11, 30),
+          //   end: new Date(2020, 11, 30)
+          // },
           timeInfo: {
             startField: "OCCUR_DATE",
             interval: {
               unit: "days",
               value: 1
+            },
+            fullTimeExtent: {
+              start: new Date(2005, 11, 30),
+              end: new Date(2020, 11, 30)
             }
           },
+          useViewTime: false,
           renderer: ShootingRender,
           effect: "bloom(0.8, 0.4px, 0%)  blur(2.7px)"
         });
