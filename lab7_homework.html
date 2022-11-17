@@ -24,9 +24,8 @@
       "esri/Map", "esri/layers/TileLayer",
       "esri/layers/MapImageLayer",
       "esri/layers/FeatureLayer",
-      "esri/widgets/TimeSlider",
-      "esri/symbols/SimpleFillSymbol"],
-      (MapView, Map, TileLayer, MapImageLayer, FeatureLayer, TimeSlider, SimpleFillSymbol) => {
+      "esri/widgets/TimeSlider"],
+      (MapView, Map, TileLayer, MapImageLayer, FeatureLayer, TimeSlider) => {
     //MAP IMAGE LAYER ------------------------------
         //Create styling for the fish essential habitat layer
         var fishHabRenderer = {
@@ -40,7 +39,7 @@
            }
          }
       //Bring in the fish habitat as a map image layer
-        var fishHab = new MapImageLayer({
+      var fishHab = new MapImageLayer({
         url: "https://gis.ngdc.noaa.gov/arcgis/rest/services/GulfDataAtlas/EssentialFishHabitats/MapServer",
         sublayers: [
           {
@@ -64,9 +63,20 @@
       }
       //Call in the feature layer from arcgis server, including time properties & additional rendering effects
       var wells = new FeatureLayer({
-          url: "https://services.arcgis.com/bDAhvQYMG4WL8O5o/ArcGIS/rest/services/Wells_History/FeatureServer/0",
+          url: "https://services.arcgis.com/bDAhvQYMG4WL8O5o/ArcGIS/rest/services/Wells_History/FeatureServer",
           renderer: wellsRender,
-          effect: "bloom(0.8, 0.4px, 0%)  blur(2.7px)"
+          effect: "bloom(0.8, 0.4px, 0%)  blur(2.7px)",
+          // timeInfo:{
+          //   startField: "ProdMonth",
+          //   interval: {
+          //     unit: "months",
+          //     value: 1
+          //   },
+          //   fullTimeExtent: {
+          //     start: new Date(1995, 11, 31),
+          //     end: new Date(2013, 11, 31)
+          //   }
+          // }
         });
 
     //BASEMAP & MAPVIEW --------------------------------------
@@ -77,17 +87,33 @@
           });
 
       //Set the map view to zoom level 10, centered on New York
-        var view = new MapView({
+      var view = new MapView({
           container: "viewDiv",
           map: map,
           zoom: 7,
-          center: [-90.681871, 27.777734],
-          // timeExtent: {
-          //   start: new Date(2005, 11, 30 ),
-          //   end: new Date(2020, 11, 30)
-          // }
+          center: [-90.681871, 27.777734]
     });
     //TIMESLIDR WIDGET -----------------------------------------
+    //Create timeslider object & add UI to map
+    const timeSlider = new TimeSlider({
+      container: "timeSlider",
+      mode: "cumulative-from-start",
+      view: view,
+      loop: true,
+      playRate: 50
+      });
+    view.ui.add(timeSlider, "bottom-left");
+
+    view.whenLayerView(wells).then((lv) => {
+          timeSlider.fullTimeExtent =
+            wells.timeInfo.fullTimeExtent;
+          timeSlider.stops = {
+            interval:{
+              value: 1,
+              unit: "years"
+            }
+          };
+        });
 
 });
 
