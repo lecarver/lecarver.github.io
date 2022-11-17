@@ -13,11 +13,22 @@
         height: 100%;
         width: 100%;
       }
+      #titleDiv {
+              padding: 20px;
+              font-size: 20;
+              text-align: center;
+      }
+      #timeSlider {
+        position: absolute;
+        left: 5%;
+        right: 5%;
+        bottom: 20px;
+        margin-bottom: 10px;
+      }
     </style>
     <!-- Links to ESRI stylesheets and scripts -->
     <link rel="stylesheet" href="https://js.arcgis.com/4.21/esri/themes/light/main.css" />
     <script src="https://js.arcgis.com/4.21/"></script>
-
     <script>
       //Add necessary modules for our map
       require(["esri/views/MapView",
@@ -66,17 +77,6 @@
           url: "https://services.arcgis.com/bDAhvQYMG4WL8O5o/ArcGIS/rest/services/Wells_History/FeatureServer",
           renderer: wellsRender,
           effect: "bloom(0.8, 0.4px, 0%)  blur(2.7px)",
-          // timeInfo:{
-          //   startField: "ProdMonth",
-          //   interval: {
-          //     unit: "months",
-          //     value: 1
-          //   },
-          //   fullTimeExtent: {
-          //     start: new Date(1995, 11, 31),
-          //     end: new Date(2013, 11, 31)
-          //   }
-          // }
         });
 
     //BASEMAP & MAPVIEW --------------------------------------
@@ -93,17 +93,17 @@
           zoom: 7,
           center: [-90.681871, 27.777734]
     });
-    //TIMESLIDR WIDGET -----------------------------------------
+    //TIMESLIDER WIDGET -----------------------------------------
     //Create timeslider object & add UI to map
     const timeSlider = new TimeSlider({
       container: "timeSlider",
       mode: "cumulative-from-start",
       view: view,
       loop: true,
-      playRate: 50
+      playRate: 30
       });
-    view.ui.add(timeSlider, "bottom-left");
-
+    view.ui.add(timeSlider, "manual");
+    //Set event to get time from feature layer based on timeslider position
     view.whenLayerView(wells).then((lv) => {
           timeSlider.fullTimeExtent =
             wells.timeInfo.fullTimeExtent;
@@ -114,6 +114,62 @@
             }
           };
         });
+    //Add title to the map
+    view.ui.add("titleDiv", "top-right");
+
+  //QUERYING FEATURE
+  //Set up querying options
+  const wellLayerSQL = [
+    "Choose a SQL where clause...", "OperatorName = Andarko Petroleum Corporation",
+    "OperatorName = Shell Offshore Inc.", "OperatorName = Exxon Mobil Corporation",
+    "OperatorName = Chevron USA Inc.", "OperatorName = EOG Resources Inc.",
+    "OperatorName = Prime Offshore LLC", "OperatorName = Union Oil Company of California"];
+  let whereClause = wellLayerSQL[0];
+
+  // Add SQL UI -- creates the box where users can select querying options
+  const select = document.createElement("select","");
+    select.setAttribute("class", "esri-widget esri-select");
+    select.setAttribute("style", "width: 200px; font-family: 'Avenir Next'; font-size: 1em");
+    wellLayerSQL.forEach(function(query){
+  let option = document.createElement("option");
+    option.innerHTML = query;
+    option.value = query;
+    select.appendChild(option);
+  });
+  view.ui.add(select, "top-right");
+
+  // Listen for changes
+  select.addEventListener('change', (event) => {
+    whereClause = event.target.value;
+    queryFeatureLayer(view.extent);
+  });
+  //function for querying
+  function queryFeatureLayer(extent) {
+    const wellQuery = {
+    where: whereClause,  // Set by select element
+    spatialRelationship: "intersects", // Relationship operation to apply
+    geometry: extent, // Restricted to visible extent of the map
+    outFields: ["OperatorName"], // Attributes to return
+    returnGeometry: true
+    };
+  wells.queryFeatures(wellQuery)
+    .then((results) => {
+        console.log("Feature count: " + results.features.length)
+        displayResults(results);
+    }).catch((error) => {
+        console.log(error.error);
+    });
+  }
+  //Displaying Results
+    function displayResults(results) {
+    const symbol = {
+      type: "simple-marker",
+      color: [ 20, 130, 200, 0.5 ],
+      outline: {
+        color: "white",
+        width: .5
+      },
+    }};
 
 });
 
@@ -126,7 +182,7 @@
     <!--Create div element for timeslider-->
     <div id="timeSlider"></div>
     <div id="titleDiv" class="esri-widget">
-      <div id="titleText">Police Shootings in NYC</div>
+      <div id="titleText">Oil Wells Built in Essential Reef Fish Habitat (1995-2017)</div>
     </div>
   </body>
 
