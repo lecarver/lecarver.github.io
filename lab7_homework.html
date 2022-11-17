@@ -59,8 +59,11 @@
         sublayers: [
           {
            id: 6,
-           renderer: fishHabRenderer
-          }
+           renderer: fishHabRenderer,
+           title: "Reef Fish"
+         },
+         {id: 1,
+         title: "Reefs"}
         ]
       });
     //FEATURE LAYER -------------------------------------
@@ -186,7 +189,7 @@ view.when(() => {
             layerInfos: [
               {
                 layer: featureLayer,
-                title: "Essential Reef Fish Habitat"
+                title: "Essential Habitats"
               },
               {
                 layer: featureLayer2,
@@ -208,7 +211,7 @@ view.when(() => {
     <div id="timeSlider"></div>
     <!--Create div element for title-->
     <div id="titleDiv" class="esri-widget">
-      <div id="titleText">Oil Wells Built in Essential Reef Fish Habitat (1995-2017)</div>
+      <div id="titleText">Oil Wells Built in Essential Habitats (1995-2017)</div>
     </div>
     <div id = footer>
         <script>
