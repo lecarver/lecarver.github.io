@@ -23,7 +23,10 @@
         left: 5%;
         right: 5%;
         bottom: 20px;
-        margin-bottom: 10px;
+        margin-bottom: 40px;
+      }
+      #footer {
+        background-color: #5EB9DD;
       }
     </style>
     <!-- Links to ESRI stylesheets and scripts -->
@@ -123,10 +126,9 @@
   //QUERYING FEATURE------------------------------------
   //Set up querying options based on OperatorName field in the wells table
   const wellLayerSQL = [
-    "Choose a SQL where clause...", "OperatorName = Andarko Petroleum Corporation",
-    "OperatorName = Shell Offshore Inc.", "OperatorName = Exxon Mobil Corporation",
-    "OperatorName = Chevron USA Inc.", "OperatorName = EOG Resources Inc.",
-    "OperatorName = Prime Offshore LLC", "OperatorName = Union Oil Company of California"];
+    "Choose a SQL where clause...", "OperatorName = ANDARKO PETROLEUM CORPORATION",
+    "OperatorName = EXXON MOBIL CORPORATION","OperatorName = CHEVRON USA INC.",
+    "OperatorName = UNION OIL COMPANY OF CALIFORNIA"];
   let whereClause = wellLayerSQL[0];
 
   // Add SQL UI -- creates the box where users can select querying options
@@ -208,6 +210,17 @@ view.when(() => {
     <div id="titleDiv" class="esri-widget">
       <div id="titleText">Oil Wells Built in Essential Reef Fish Habitat (1995-2017)</div>
     </div>
+    <div id = footer>
+        <script>
+        //Grab the current date & time
+        var today = new Date();
+        //Pull just the year from our today variable
+        var year = today.getFullYear();
+        //write in "Copyright", the copyright character and the year.
+        document.writeln("Copyright &copy;" + year);
+      </script>
+      by Lester Carver
+  </div>
   </body>
 
 </html>
