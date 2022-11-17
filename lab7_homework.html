@@ -25,35 +25,33 @@
       "esri/layers/MapImageLayer",
       "esri/layers/FeatureLayer",
       "esri/widgets/TimeSlider",
-      "esri/TimeExtent"],
-      (MapView, Map, TileLayer, MapImageLayer, FeatureLayer, TimeSlider) => {
+      "esri/symbols/SimpleFillSymbol"],
+      (MapView, Map, TileLayer, MapImageLayer, FeatureLayer, TimeSlider, SimpleFillSymbol) => {
     //MAP IMAGE LAYER ------------------------------
-        //Create styling for the police stations
-        var StationRenderer = {
-        type: "simple", // autocasts as new SimpleRenderer()
-        //Indicates that we will have a yellow 3px point for our cities
-        symbol: {
-            type: "simple-marker", // autocasts as new SimpleMarkerSymbol()
-            size: 4,
-            color: "blue",
-            style: "diamond",
-            label: "Police Stations"
-          }};
-      //Bring in the police stations as a map image layer
-        var StationsLayer = new MapImageLayer({
-        url: "https://carto.nationalmap.gov/arcgis/rest/services/structures/MapServer",
+        //Create styling for the fish essential habitat layer
+        var fishHabRenderer = {
+           type: "simple",
+           symbol: {
+             type: "simple-fill",
+             color: [95, 185, 221, 0.4],  // Orange, opacity 40%
+             outline: {
+              color: [80, 154, 183],
+              width: 1}
+           }
+         }
+      //Bring in the fish habitat as a map image layer
+        var fishHab = new MapImageLayer({
+        url: "https://gis.ngdc.noaa.gov/arcgis/rest/services/GulfDataAtlas/EssentialFishHabitats/MapServer",
         sublayers: [
           {
-           id: 53,
-           renderer: StationRenderer
+           id: 6,
+           renderer: fishHabRenderer
           }
         ]
       });
     //FEATURE LAYER -------------------------------------
-      //set up empty layerView variable for use in TimeSlider later on
-      let layerView;
       //Create rendering properties for the feature layer
-      var ShootingRender = {
+      var wellsRender = {
         type: "simple",
         symbol: {
           type: "simple-marker",
@@ -63,28 +61,11 @@
             color: "#ff0000"
           }
         }
-
       }
       //Call in the feature layer from arcgis server, including time properties & additional rendering effects
-      var ShootingLayer = new FeatureLayer({
-          url: "https://services.arcgis.com/V6ZHFr6zdgNZuVG0/ArcGIS/rest/services/NYPD_Shooting_Incident_Data__Historic_/FeatureServer",
-          // timeExtent: {
-          //   start: new Date(2005, 11, 30),
-          //   end: new Date(2020, 11, 30)
-          // },
-          timeInfo: {
-            startField: "OCCUR_DATE",
-            interval: {
-              unit: "days",
-              value: 1
-            },
-            fullTimeExtent: {
-              start: new Date(2005, 11, 30),
-              end: new Date(2020, 11, 30)
-            }
-          },
-          useViewTime: false,
-          renderer: ShootingRender,
+      var wells = new FeatureLayer({
+          url: "https://services.arcgis.com/bDAhvQYMG4WL8O5o/ArcGIS/rest/services/Wells_History/FeatureServer/0",
+          renderer: wellsRender,
           effect: "bloom(0.8, 0.4px, 0%)  blur(2.7px)"
         });
 
@@ -92,60 +73,21 @@
       //Set up new map with dark grey basemap and add our two layers
       var map = new Map({
           basemap: "dark-gray",
-          layers: [ShootingLayer, StationsLayer]
+          layers: [fishHab, wells]
           });
 
       //Set the map view to zoom level 10, centered on New York
         var view = new MapView({
           container: "viewDiv",
           map: map,
-          zoom: 11,
-          center: [-74.0060, 40.7128],
+          zoom: 7,
+          center: [-90.681871, 27.777734],
           // timeExtent: {
           //   start: new Date(2005, 11, 30 ),
           //   end: new Date(2020, 11, 30)
           // }
     });
     //TIMESLIDR WIDGET -----------------------------------------
-      //create timeslider object, setting the interval to match time extent of feature layer
-        var timeSlider = new TimeSlider({
-          container: "timeSlider",
-          playRate: 50,
-          stops: {
-            interval: {
-              value: 1,
-              unit: "months"
-            }
-          },
-          fullTimeExtent: {
-            start: new Date(2005, 11, 30 ),
-            end: new Date(2020, 11, 30)
-          },
-          timeExtent: {
-            start: new Date(2006, 0, 1),
-            end: new Date(2006, 0, 30)
-          },
-          timeVisible: true, // show the time stamps on the timeslider
-          mode: "time-window",
-          });
-        view.ui.add(timeSlider, "bottom-left");
-
-        view.whenLayerView(ShootingLayer).then((lv) => {
-          layerView = lv;
-          const start = new Date(2005, 11, 30);
-          timeSlider.fullTimeExtent = {
-              start: start,
-              end: ShootingLayer.timeInfo.fullTimeExtent.end
-            };
-          let end = new Date(start);
-          end.setDate(end.getDate() + 1);
-          timeSlider.timeExtent = {start, end};
-        });
-
-        timeSlider.watch("timeExtent", () => {
-          ShootingLayer.definitionExpression =
-            "OCCUR_DATE <= " + timeSlider.timeExtent.end.getTime();
-          });
 
 });
 
