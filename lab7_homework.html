@@ -35,8 +35,9 @@
       "esri/Map", "esri/layers/TileLayer",
       "esri/layers/MapImageLayer",
       "esri/layers/FeatureLayer",
-      "esri/widgets/TimeSlider"],
-      (MapView, Map, TileLayer, MapImageLayer, FeatureLayer, TimeSlider) => {
+      "esri/widgets/TimeSlider",
+      "esri/widgets/Legend"],
+      (MapView, Map, TileLayer, MapImageLayer, FeatureLayer, TimeSlider, Legend) => {
     //MAP IMAGE LAYER ------------------------------
         //Create styling for the fish essential habitat layer
         var fishHabRenderer = {
@@ -119,7 +120,7 @@
     //Add title to the map
     view.ui.add("titleDiv", "top-right");
 
-  //QUERYING FEATURE
+  //QUERYING FEATURE------------------------------------
   //Set up querying options based on OperatorName field in the wells table
   const wellLayerSQL = [
     "Choose a SQL where clause...", "OperatorName = Andarko Petroleum Corporation",
@@ -172,7 +173,28 @@
         width: .5
       },
     }};
+//LEGEND--------------------------------------
+//Once page is loaded, get both layers and add to legend object. Add to Map
+view.when(() => {
+          const featureLayer = map.layers.getItemAt(0);
+          const featureLayer2 = map.layers.getItemAt(1);
 
+          const legend = new Legend({
+            view: view,
+            layerInfos: [
+              {
+                layer: featureLayer,
+                title: "Essential Reef Fish Habitat"
+              },
+              {
+                layer: featureLayer2,
+                title: "Oil Wells"
+              }
+            ]
+          });
+          // Add widget to the bottom right corner of the view
+      view.ui.add(legend, "top-right");
+    });
 });
   </script>
   </head>
