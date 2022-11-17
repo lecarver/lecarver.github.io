@@ -3,7 +3,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
     <title>Lab 7 Assignment</title>
-    <!-- Make map frame fill our whole screen -->
+    <!-- set styling properties for the map, title, and timeSlider-->
     <style>
       html,
       body,
@@ -43,13 +43,13 @@
            type: "simple",
            symbol: {
              type: "simple-fill",
-             color: [95, 185, 221, 0.4],  // Orange, opacity 40%
+             color: [95, 185, 221, 0.4],
              outline: {
               color: [80, 154, 183],
               width: 1}
            }
          }
-      //Bring in the fish habitat as a map image layer
+      //Bring in the fish habitat as a map image layer. Select SubLayer 6 for Reef Fish specifically.
       var fishHab = new MapImageLayer({
         url: "https://gis.ngdc.noaa.gov/arcgis/rest/services/GulfDataAtlas/EssentialFishHabitats/MapServer",
         sublayers: [
@@ -60,7 +60,7 @@
         ]
       });
     //FEATURE LAYER -------------------------------------
-      //Create rendering properties for the feature layer
+      //Create rendering properties for the wells layer
       var wellsRender = {
         type: "simple",
         symbol: {
@@ -72,7 +72,7 @@
           }
         }
       }
-      //Call in the feature layer from arcgis server, including time properties & additional rendering effects
+      //Call in the feature layer from arcgis server, including additional rendering effects
       var wells = new FeatureLayer({
           url: "https://services.arcgis.com/bDAhvQYMG4WL8O5o/ArcGIS/rest/services/Wells_History/FeatureServer",
           renderer: wellsRender,
@@ -80,19 +80,20 @@
         });
 
     //BASEMAP & MAPVIEW --------------------------------------
-      //Set up new map with dark grey basemap and add our two layers
+      //Set up new map with dark grey basemap and add the two layers
       var map = new Map({
           basemap: "dark-gray",
           layers: [fishHab, wells]
           });
 
-      //Set the map view to zoom level 10, centered on New York
+      //Set the map view to zoom level 7, centered on the Gulf of Mexico
       var view = new MapView({
           container: "viewDiv",
           map: map,
           zoom: 7,
           center: [-90.681871, 27.777734]
     });
+
     //TIMESLIDER WIDGET -----------------------------------------
     //Create timeslider object & add UI to map
     const timeSlider = new TimeSlider({
@@ -103,6 +104,7 @@
       playRate: 30
       });
     view.ui.add(timeSlider, "manual");
+
     //Set event to get time from feature layer based on timeslider position
     view.whenLayerView(wells).then((lv) => {
           timeSlider.fullTimeExtent =
@@ -118,7 +120,7 @@
     view.ui.add("titleDiv", "top-right");
 
   //QUERYING FEATURE
-  //Set up querying options
+  //Set up querying options based on OperatorName field in the wells table
   const wellLayerSQL = [
     "Choose a SQL where clause...", "OperatorName = Andarko Petroleum Corporation",
     "OperatorName = Shell Offshore Inc.", "OperatorName = Exxon Mobil Corporation",
@@ -138,7 +140,7 @@
   });
   view.ui.add(select, "top-right");
 
-  // Listen for changes
+  // Listen for changes in selection
   select.addEventListener('change', (event) => {
     whereClause = event.target.value;
     queryFeatureLayer(view.extent);
@@ -160,7 +162,7 @@
         console.log(error.error);
     });
   }
-  //Displaying Results
+  //Displaying Results of querying
     function displayResults(results) {
     const symbol = {
       type: "simple-marker",
@@ -172,7 +174,6 @@
     }};
 
 });
-
   </script>
   </head>
 
@@ -181,6 +182,7 @@
     <div id="viewDiv"></div>
     <!--Create div element for timeslider-->
     <div id="timeSlider"></div>
+    <!--Create div element for title-->
     <div id="titleDiv" class="esri-widget">
       <div id="titleText">Oil Wells Built in Essential Reef Fish Habitat (1995-2017)</div>
     </div>
