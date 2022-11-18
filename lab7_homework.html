@@ -127,59 +127,73 @@
     //Add title to the map
     view.ui.add("titleDiv", "top-right");
 
-  // //QUERYING FEATURE------------------------------------
-  // //Set up querying options based on OperatorName field in the wells table
-  // const reefLayerSQL = [
-  //   "Choose reef habitat", "name = 29 Fathom", "name = Alderice Bank",
-  //   "name = Bouma Bank", "name = East Flower Garden Bank", "name = Greyer Bank",
-  //   "name = Rankin Bight Bank"];
-  // let whereClause = reefLayerSQL[0];
-  //
-  // // Add SQL UI -- creates the box where users can select querying options
-  // const select = document.createElement("select","");
-  //   select.setAttribute("class", "esri-widget esri-select");
-  //   select.setAttribute("style", "width: 200px; font-family: 'Avenir Next'; font-size: 1em");
-  //   reefLayerSQL.forEach(function(query){
-  // let option = document.createElement("option");
-  //   option.innerHTML = query;
-  //   option.value = query;
-  //   select.appendChild(option);
-  // });
-  // view.ui.add(select, "top-right");
-  //
-  // // Listen for changes in selection
-  // select.addEventListener('change', (event) => {
-  //   whereClause = event.target.value;
-  //   queryFeatureLayer(view.extent);
-  // });
-  // //function for querying
-  // function queryFeatureLayer(extent) {
-  //   const reefQuery = {
-  //   where: whereClause,  // Set by select element
-  //   spatialRelationship: "intersects", // Relationship operation to apply
-  //   geometry: extent, // Restricted to visible extent of the map
-  //   outFields: ["name"], // Attributes to return
-  //   returnGeometry: true
-  //   };
-  // fishHab.queryFeatures(reefQuery)
-  //   .then((results) => {
-  //       console.log("Feature count: " + results.features.length)
-  //       displayResults(results);
-  //   }).catch((error) => {
-  //       console.log(error.error);
-  //   });
-  // }
-  // //Displaying Results of querying
-  //   function displayResults(results) {
-  //     const symbol = {
-  //       type: "simple-fill",
-  //       color: [20, 130, 200],
-  //       outline: {
-  //         color: "white",
-  //         width: .5
-  //       },
-  //     };
-  //   };
+  //QUERYING FEATURE------------------------------------
+  //Call feature layer to be used for query
+  const spillsLayer = new FeatureLayer({
+    url: "https://portal.gulfcouncil.org/arcgis/rest/services/Hosted/GoM_Coral_NCS_Vulnerability_WFL1/FeatureServer/4",
+  });
+  const spillsLayerSQL = [
+    "Spills by Type", "threat = 'Oil'","threat = 'Chemical'",
+    "threat = 'Other'"];
+
+    let whereClause = spillsLayerSQL[0];
+
+    // Add SQL UI -- creates the box where users can select querying options
+    const select = document.createElement("select","");
+    select.setAttribute("class", "esri-widget esri-select");
+    select.setAttribute("style", "width: 200px; font-family: 'Avenir Next'; font-size: 1em");
+    spillsLayerSQL.forEach(function(query){
+    let option = document.createElement("option");
+    option.innerHTML = query;
+    option.value = query;
+    select.appendChild(option);
+  });
+
+  view.ui.add(select, "top-right");
+
+  // Listen for changes
+  select.addEventListener('change', (event) => {
+    whereClause = event.target.value;
+    queryFeatureLayer(view.extent);
+  });
+
+
+  //function for querying
+  function queryFeatureLayer(extent) {
+    const spillsQuery = {
+    where: whereClause,  // Set by select element
+    spatialRelationship: "intersects", // Relationship operation to apply
+    geometry: extent, // Restricted to visible extent of the map
+    outFields: ["threat"], // Attributes to return
+    returnGeometry: true
+    };
+  spillsLayer.queryFeatures(spillsQuery)
+    .then((results) => {
+        console.log("Feature count: " + results.features.length)
+        displayResults(results);
+    }).catch((error) => {
+        console.log(error.error);
+    });
+}
+//Displaying Results
+    function displayResults(results) {
+    // Create a blue polygon
+    const symbol = {
+      type: "simple-marker",
+      size: 9,
+      color: [ 63, 170, 75, 0.5 ],
+    };
+    // Assign styles and popup to features
+    results.features.map((feature) => {
+      feature.symbol = symbol;
+      return feature;
+    });
+    // Clear display
+    view.graphics.removeAll();
+    // Add features to graphics layer
+    view.graphics.addMany(results.features);
+  }
+
 //LEGEND--------------------------------------
 //Once page is loaded, get both layers and add to legend object. Add to Map
 view.when(() => {
