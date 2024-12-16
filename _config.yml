@@ -21,7 +21,7 @@ nav-menu:
 - text: About
   permalink: about
 - text: My Work
-  permalink: portfolio
+  permalink: work
 
 # use false to turn off any social media links
 twitter: false
