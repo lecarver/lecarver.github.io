@@ -20,10 +20,8 @@ show-nav-menu: true
 nav-menu:
 - text: About
   permalink: about
-- text: Portfolio
+- text: My Work
   permalink: portfolio
-- text: Blog
-  permalink: blog
 
 # use false to turn off any social media links
 twitter: false
