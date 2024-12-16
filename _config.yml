@@ -10,9 +10,9 @@ description: A Github Pages (Jekyll) template based on TailwindCSS
 theme-color: indigo # indigo|yellow|pink|green|stone|
 
 # homepage information
-author: Satoshi Nakamoto
-author-bio: Creator of Bitcoin  # change to false to hide
-author-image: 279.png  # file must be in the /assets/img/ folder
+author: Lester Carver
+author-bio: GIS Specialist. Telling Stories. Making Data Accessible  # change to false to hide
+author-image: headshot.jpeg  # file must be in the /assets/img/ folder
 
 # navigation menu
 show-nav-menu: true
@@ -26,14 +26,14 @@ nav-menu:
   permalink: blog
 
 # use false to turn off any social media links
-twitter: https://twitter.com/
-facebook: https://facebook.com/
-instagram: https://instagram.com/
-github: https://github.com/
-linkedin: https://linkedin.com/
+twitter: false
+facebook: false
+instagram: false
+github: https://github.com/lecarver
+linkedin: https://www.linkedin.com/in/lester-carver/
 medium: false
 google-scholar: false
-email: false
+email: mailto:lester.e.carver@gmail.com
 
 # footer information
 footer-msg: "Powered by Tailpages"
