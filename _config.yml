@@ -18,8 +18,8 @@ author-image: headshot.jpeg  # file must be in the /assets/img/ folder
 show-nav-menu: true
 
 nav-menu:
-- text: About
-  permalink: about
+# - text: About
+#   permalink: about
 - text: My Work
   permalink: work
 
