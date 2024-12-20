@@ -9,12 +9,13 @@ permalink: work
 
 
 
-  <div class="w-full bg-gray-100">
-    <div class="bg-blue-900 text-white py-4">
+<div class="w-full bg-gray-100">
+   <div class="bg-blue-900 text-white py-4">
       <h1 class="text-center text-2xl font-bold">Interactive Maps</h1>
-    </div>
+   </div>
+</div>
 
-<div class="grid-custom bg-gray-100 p-6">
+<div class="grid-custom bg-gray-100">
   <div class="bg-red-500 text-white text-center p-4"><a href="assets/work/accessbc.html" class="index-work-section" id="accessbc">
     <img alt="a map screenshot" class="index-work-img" src="assets/img/accessbc.png">
     <div class="index-work-title">
@@ -50,43 +51,35 @@ permalink: work
     </ul>
     </a></div>
 </div>
+
+<div class="w-full bg-gray-100">
+   <div class="bg-blue-900 text-white py-4">
+      <h1 class="text-center text-2xl font-bold">Static Maps</h1>
+   </div>
+</div>
+
 <div class="grid-custom bg-gray-100 p-6">
-  <div class="bg-green-500 text-white text-center p-4"><a href="work/dul-sharepoint.html" class="index-work-section" id="sharepoint">
+  <div class="bg-green-500 text-white text-center p-4"><a href="assets/work/bcstatic.html" class="index-work-section" id="bcstatic">
     <img alt="a logo reading DUL UX" class="index-work-img" src="work/images/sharepoint/index-hero.png">
     <div class="index-work-title">
-        <h2>DUL UX Sharepoint</h2>
+        <h2>Boston College</h2>
     </div>
-    <p class="description">How do we showcase what UX is?</p>
     <ul class="skills">
-        <li>UX Research</li>
-        <li>MS 365</li>
-        <li>SharePoint</li>
+        <li>ArcGIS Pro</li>
     </ul>
     </a></div>
-      <div class="bg-green-500 text-white text-center p-4"><a href="work/dul-sharepoint.html" class="index-work-section" id="sharepoint">
+      <div class="bg-green-500 text-white text-center p-4"><a href="assets/work/clarkstatic.html" class="index-work-section" id="sharepoint">
     <img alt="a logo reading DUL UX" class="index-work-img" src="work/images/sharepoint/index-hero.png">
     <div class="index-work-title">
-        <h2>DUL UX Sharepoint</h2>
+        <h2>Clark University</h2>
     </div>
-    <p class="description">How do we showcase what UX is?</p>
     <ul class="skills">
-        <li>UX Research</li>
-        <li>MS 365</li>
-        <li>SharePoint</li>
+        <li>ArcGIS Map</li>
+        <li>ArcGIS Pro</li>
+        <li>QGIS</li>
     </ul>
     </a></div>
-          <div class="bg-green-500 text-white text-center p-4"><a href="work/dul-sharepoint.html" class="index-work-section" id="sharepoint">
-    <img alt="a logo reading DUL UX" class="index-work-img" src="work/images/sharepoint/index-hero.png">
-    <div class="index-work-title">
-        <h2>DUL UX Sharepoint</h2>
-    </div>
-    <p class="description">How do we showcase what UX is?</p>
-    <ul class="skills">
-        <li>UX Research</li>
-        <li>MS 365</li>
-        <li>SharePoint</li>
-    </ul>
-    </a></div>
+
 
 </div>
 
