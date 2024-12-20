@@ -94,6 +94,3 @@ permalink: work
 
 </div>
 </section>
-
-
-</main>
