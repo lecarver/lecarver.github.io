@@ -38,6 +38,7 @@ html, body {
 * {
     padding: 0;
     margin: 0;
+    font-family: 'Lato', 'Helvetica Neue', sans-serif;
 }
 .prose {
     padding-left: 0;
@@ -70,6 +71,14 @@ img{
     width: 100%;
     border-radius: .5em;
     flex-shrink: 0;
+}
+
+.centered-image {
+    display: block;   /* Makes the image a block element so it can be centered */
+    margin-left: auto; /* Centers the image horizontally */
+    margin-right: auto; 
+    width: 80%;        /* You can adjust the width as needed */
+    border-radius: .5em; /* Optional for rounded corners */
 }
 
 section{

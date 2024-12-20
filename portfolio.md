@@ -10,8 +10,8 @@ permalink: work
 
 
 <div class="w-full bg-gray-100">
-   <div class="bg-blue-900 text-white py-4">
-      <h1 class="text-center text-2xl font-bold">Interactive Maps</h1>
+   <div class="bg-blue-700 p-4 font-bold text-3xl">
+      <h1 class="text-2xl font-bold">Interactive Maps</h1>
    </div>
 </div>
 
@@ -54,13 +54,45 @@ permalink: work
 
 <div class="w-full bg-gray-100">
    <div class="bg-blue-900 text-white py-4">
-      <h1 class="text-center text-2xl font-bold">Static Maps</h1>
+      <h1 class="text-center text-2xl font-bold">GIS Programming</h1>
+   </div>
+</div>
+
+<div class="grid-custom bg-gray-100 p-6">
+  <div class="bg-green-500 text-white text-center p-4"><a href="assets/work/nightlights.html" class="index-work-section" id="nightlights">
+    <img alt="screenshot of a map" class="index-work-img" src="assets/img/bstn_ltnl.png">
+    <div class="index-work-title">
+        <h2>Public Housing and Nighttime Lights</h2>
+    </div>
+    <ul class="skills">
+        <li>R</li>
+        <li>Remote Sensing</li>
+    </ul>
+    </a></div>
+      <div class="bg-green-500 text-white text-center p-4"><a href="assets/work/cropland.html" class="index-work-section" id="cropland">
+          <img alt="screenshot of a map" class="index-work-img" src="assets/img/cropland.jpg>
+    <div class="index-work-title">
+        <h2>Cropland Mapping in Zambia</h2>
+    </div>
+    <ul class="skills">
+        <li>Google Earth Engine</li>
+        <li>Remote Sensing</li>
+        <li>Machine Learning</li>
+    </ul>
+    </a></div>
+
+
+</div>
+
+<div class="w-full bg-gray-100">
+   <div class="bg-blue-900 text-white py-4">
+      <h1 class="text-center text-2xl font-bold">Static Maps <em>Coming Soon </em></h1>
    </div>
 </div>
 
 <div class="grid-custom bg-gray-100 p-6">
   <div class="bg-green-500 text-white text-center p-4"><a href="assets/work/bcstatic.html" class="index-work-section" id="bcstatic">
-    <img alt="a logo reading DUL UX" class="index-work-img" src="work/images/sharepoint/index-hero.png">
+    <!-- <img alt="a logo reading DUL UX" class="index-work-img" src="work/images/sharepoint/index-hero.png"> -->
     <div class="index-work-title">
         <h2>Boston College</h2>
     </div>
@@ -69,7 +101,7 @@ permalink: work
     </ul>
     </a></div>
       <div class="bg-green-500 text-white text-center p-4"><a href="assets/work/clarkstatic.html" class="index-work-section" id="sharepoint">
-    <img alt="a logo reading DUL UX" class="index-work-img" src="work/images/sharepoint/index-hero.png">
+    <!-- <img alt="a logo reading DUL UX" class="index-work-img" src="work/images/sharepoint/index-hero.png"> -->
     <div class="index-work-title">
         <h2>Clark University</h2>
     </div>
