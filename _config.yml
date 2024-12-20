@@ -3,7 +3,7 @@ baseurl: "" # the name of your github repo
 url: "https://lecarver.github.io" # the url of your github pages
 
 # site information used in page title, meta data etc.
-title: "Tailpages: Tailwind + Github Pages"
+title: "Lester Carver"
 description: A Github Pages (Jekyll) template based on TailwindCSS
 
 # color theme for links
@@ -36,9 +36,6 @@ email: mailto:lester.e.carver@gmail.com
 # footer information
 footer-msg: "Powered by Tailpages"
 footer-msg-link: https://github.com/harrywang/tailpages
-
-# google analytics
-google-analytics: G-WCRC1TC2V5
 
 # jekyll plugins - no need to change
 plugins:
