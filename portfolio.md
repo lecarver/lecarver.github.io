@@ -8,7 +8,6 @@ permalink: work
 <main id="main"> <!-- Favicon Information -->
 
 
-
 <div class="w-full bg-gray-100">
    <div class="bg-blue-700 p-4 font-bold text-3xl">
       <h1 class="text-2xl font-bold">Interactive Maps</h1>
@@ -53,8 +52,8 @@ permalink: work
 </div>
 
 <div class="w-full bg-gray-100">
-   <div class="bg-blue-900 text-white py-4">
-      <h1 class="text-center text-2xl font-bold">GIS Programming</h1>
+   <div class="bg-blue-700 p-4 font-bold text-3xl">
+      <h1 class="text-2xl font-bold">GIS Programming</h1>
    </div>
 </div>
 
@@ -69,8 +68,8 @@ permalink: work
         <li>Remote Sensing</li>
     </ul>
     </a></div>
-      <div class="bg-green-500 text-white text-center p-4"><a href="assets/work/cropland.html" class="index-work-section" id="cropland">
-          <img alt="screenshot of a map" class="index-work-img" src="assets/img/cropland.jpg>
+      <div class="bg-green-500 text-white text-center p-4"><a href="assets/work/cropland.html"> class="index-work-section" id="cropland">
+          <img alt="screenshot of coding from Google Earth Engine" class="index-work-img" src="assets/img/cropland.jpg>
     <div class="index-work-title">
         <h2>Cropland Mapping in Zambia</h2>
     </div>
@@ -80,13 +79,40 @@ permalink: work
         <li>Machine Learning</li>
     </ul>
     </a></div>
-
-
 </div>
 
 <div class="w-full bg-gray-100">
-   <div class="bg-blue-900 text-white py-4">
-      <h1 class="text-center text-2xl font-bold">Static Maps <em>Coming Soon </em></h1>
+   <div class="bg-blue-700 p-4 font-bold text-3xl">
+      <h1 class="text-2xl font-bold">Data Visualization & Analytics</h1>
+   </div>
+</div>
+<div class="grid-custom bg-gray-100 p-6">
+  <div class="bg-green-500 text-white text-center p-4"><a href="assets/work/bcltableau.html" class="index-work-section" id="nightlights">
+    <img alt="screenshot of a map" class="index-work-img" src="assets/img/bcl.png">
+    <div class="index-work-title">
+        <h2>Library Analytics</h2>
+    </div>
+    <ul class="skills">
+        <li>Tableau</li>
+        <li>Data Collection</li>
+    </ul>
+    </a></div>
+      <div class="bg-green-500 text-white text-center p-4"><a href="assets/work/tactile.html" class="index-work-section" id="cropland">
+          <img alt="screenshot of coding from Google Earth Engine" class="index-work-img" src="assets/img/worcester.png">
+    <div class="index-work-title">
+        <h2>3D-Printing Maps</h2>
+    </div>
+    <ul class="skills">
+        <li>ArcGIS Pro</li>
+        <li>Blender</li>
+        <li>3D Printing</li>
+    </ul>
+    </a></div>
+</div>
+
+<div class="w-full bg-gray-100">
+   <div class="bg-blue-700 p-4 font-bold text-3xl">
+      <h1 class="text-2xl font-bold">Static Maps <em>*Coming Soon*</em></h1>
    </div>
 </div>
 
