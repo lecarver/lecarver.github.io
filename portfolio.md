@@ -14,11 +14,10 @@ permalink: work
 <h1> Interactive Maps</h1>
 <div>
 <div class="grid-custom bg-gray-100 p-6">
-  <div class="bg-red-500 text-white text-center p-4"><a href="work/dul-sharepoint.html" class="index-work-section" id="sharepoint">
+  <div class="bg-red-500 text-white text-center p-4"><a href="work/dul-sharepoint.html" class="index-work-section" id="accessbc">
     <img alt="a map screenshot" class="index-work-img" src="assets/img/accessbc.png">
     <div class="index-work-title">
         <h2>Access BC</h2>
-        <p>*In Active Development*</p>
     </div>
     <ul class="skills">
         <li>Mapbox</li>
@@ -26,7 +25,17 @@ permalink: work
         <li>JavaScript</li>
     </ul>
     </a></div>
-  <div class="bg-green-500 text-white text-center p-4"><a href="assets/work/mappingukraine.html" class="index-work-section" id="sharepoint">
+  <div class="bg-green-500 text-white text-center p-4"><a href="assets/work/mappingukraine.html" class="index-work-section" id="fatalencounters">
+    <img alt="a map screenshot" class="index-work-img" src="assets/img/fatalencounters.png">
+    <div class="index-work-title">
+        <h2>Fatal Encounters with Police</h2>
+    </div>
+    <ul class="skills">
+        <li>Tableau</li>
+        <li>Web-Mapping</li>
+    </ul>
+    </a></div>
+  <div class="bg-green-500 text-white text-center p-4"><a href="assets/work/mappingukraine.html" class="index-work-section" id="ukraine">
     <img alt="a map screenshot" class="index-work-img" src="assets/img/tweetukraine.png">
     <div class="index-work-title">
         <h2>Mapping Tweets in Ukraine</h2>
@@ -37,20 +46,7 @@ permalink: work
         <li>Python</li>
     </ul>
     </a></div>
-  <div class="bg-green-500 text-white text-center p-4"><a href="assets/work/mappingukraine.html" class="index-work-section" id="sharepoint">
-    <img alt="a map screenshot" class="index-work-img" src="assets/img/tweetukraine.png">
-    <div class="index-work-title">
-        <h2>Mapping Tweets in Ukraine</h2>
-    </div>
-    <ul class="skills">
-        <li>Mapbox</li>
-        <li>Web-Mapping</li>
-        <li>Python</li>
-    </ul>
-    </a></div>
-
 </div>
-
 <div>
 <h1> Interactive Maps </h1>
 <div>
