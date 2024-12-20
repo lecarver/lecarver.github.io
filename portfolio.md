@@ -68,7 +68,7 @@ permalink: work
         <li>Remote Sensing</li>
     </ul>
     </a></div>
-      <div class="bg-green-500 text-white text-center p-4"><a href="assets/work/cropland.html"> class="index-work-section" id="cropland">
+      <div class="bg-green-500 text-white text-center p-4"><a href="assets/work/cropland.html" class="index-work-section" id="cropland">
           <img alt="screenshot of coding from Google Earth Engine" class="index-work-img" src="assets/img/cropland.jpg>
     <div class="index-work-title">
         <h2>Cropland Mapping in Zambia</h2>
