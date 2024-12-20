@@ -15,27 +15,37 @@ permalink: work
 <div>
 <div class="grid-custom bg-gray-100 p-6">
   <div class="bg-red-500 text-white text-center p-4"><a href="work/dul-sharepoint.html" class="index-work-section" id="sharepoint">
-    <img alt="a logo reading DUL UX" class="index-work-img" src="work/images/sharepoint/index-hero.png">
+    <img alt="a map screenshot" class="index-work-img" src="assets/img/accessbc.png">
     <div class="index-work-title">
-        <h2>DUL UX Sharepoint</h2>
+        <h2>Access BC</h2>
+        <p>*In Active Development*</p>
     </div>
-    <p class="description">How do we showcase what UX is?</p>
     <ul class="skills">
-        <li>UX Research</li>
-        <li>MS 365</li>
-        <li>SharePoint</li>
+        <li>Mapbox</li>
+        <li>Web-Mapping</li>
+        <li>JavaScript</li>
     </ul>
     </a></div>
-  <div class="bg-green-500 text-white text-center p-4"><a href="work/dul-sharepoint.html" class="index-work-section" id="sharepoint">
-    <img alt="a logo reading DUL UX" class="index-work-img" src="work/images/sharepoint/index-hero.png">
+  <div class="bg-green-500 text-white text-center p-4"><a href="assets/work/mappingukraine.html" class="index-work-section" id="sharepoint">
+    <img alt="a map screenshot" class="index-work-img" src="assets/img/tweetukraine.png">
     <div class="index-work-title">
-        <h2>DUL UX Sharepoint</h2>
+        <h2>Mapping Tweets in Ukraine</h2>
     </div>
-    <p class="description">How do we showcase what UX is?</p>
     <ul class="skills">
-        <li>UX Research</li>
-        <li>MS 365</li>
-        <li>SharePoint</li>
+        <li>Mapbox</li>
+        <li>Web-Mapping</li>
+        <li>Python</li>
+    </ul>
+    </a></div>
+  <div class="bg-green-500 text-white text-center p-4"><a href="assets/work/mappingukraine.html" class="index-work-section" id="sharepoint">
+    <img alt="a map screenshot" class="index-work-img" src="assets/img/tweetukraine.png">
+    <div class="index-work-title">
+        <h2>Mapping Tweets in Ukraine</h2>
+    </div>
+    <ul class="skills">
+        <li>Mapbox</li>
+        <li>Web-Mapping</li>
+        <li>Python</li>
     </ul>
     </a></div>
 
