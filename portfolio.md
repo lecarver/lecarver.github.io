@@ -137,9 +137,4 @@ permalink: work
         <li>QGIS</li>
     </ul>
     </a></div>
-
-
-</div>
-
-
 </div>
