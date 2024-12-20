@@ -9,7 +9,6 @@ permalink: work
 
 
 
-<section class="hero">
   <div class="w-full bg-gray-100">
     <div class="bg-blue-900 text-white py-4">
       <h1 class="text-center text-2xl font-bold">Interactive Maps</h1>
@@ -93,4 +92,3 @@ permalink: work
 
 
 </div>
-</section>
